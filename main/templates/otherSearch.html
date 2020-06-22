@@ -1,0 +1,105 @@
+{% extends 'wrap.html' %}
+
+{% block title %}
+Поиск остального
+{% endblock title %}
+
+{% block content %}
+{% load static %}
+<script src="{% static "js/main.js" %}"></script>
+<script src="{% static "js/jquery.chained.js" %}"></script>
+    {% csrf_token %}
+    <div class="row">
+        <div class="col">
+            <div id="mainPanel" class="card shadow-sm my-2">
+                <div class="card-header">
+                    <ul class="nav nav-tabs card-header-tabs">
+                        <li class="nav-item disabled">
+                            <a class="nav-link" href="{% url 'index' %}">Автомобиль</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{% url 'otherSearch' %}" tabindex="-1" aria-disabled="true">Вещь</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <form action="" method="POST" id="send">
+                        <input id="cityCount" type="hidden" name="cityCount" value="1"></input>
+                        <div class="form-row" id="cityRow0">
+                            <div class="form-group col-9">
+                                <input id="inputCity0" class="form-control" name="city0" list="cities"
+                                    placeholder="Город" />
+                                <datalist id="cities">
+                                    {% for region in regionDB %}
+                                    <option value="{{ region.name }}">{{ region.name }}</option>
+                                    {% endfor %}
+                                    {% for city in cityDB %}
+                                    <option value="{{ city.name }}">{{ city.name }}</option>
+                                    {% endfor %}
+                                </datalist>
+                            </div>
+                            <div class="form-group col-3">
+                                <button class="btn btn-outline-danger" id="delbutton" type="button" hidden="true"
+                                    onclick="delCity()">Удалить</button>
+                            </div>
+                        </div>
+                        <button class="btn btn-sm btn-outline-primary" id="addbutton" type="button"
+                            onclick="addCity()">Добавитьгород</button>
+                        <div class="form-row mt-3">
+                            <div class="form-group col-9">
+                                <input id="" class="form-control" name="find" value="" placeholder="Чего ищем?"></input>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" name="radius" id="radius">
+                                <option value="" hidden="">Радиус</option>
+                                <option value="">0</option>
+                                <option value="100">100</option>
+                                <option value="200">200</option>
+                                <option value="300">300</option>
+                                <option value="400">400</option>
+                                <option value="500">500</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input class="form-control" type="number" name="price_from" min="0" value=""
+                                    placeholder="Цена от">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input class="form-control" type="number" name="price_to" min="0" value=""
+                                    placeholder="Цена до">
+                            </div>
+                        </div>
+                        <div class="form-group d-flex flex-row-reverse">
+                            <button id="sendBtn" type="button" class="btn btn-primary btn-lg"
+                                onclick="sendFilter('{{ csrf_token }}', 'other')">
+                                <span id="sendText">Отправить</span>
+                                <span id="sendSpinner" style="display: none"
+                                    class="spinner-border spinner-border-sm my-1" role="status"
+                                    aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="div_messages2" class='mt-3'>
+    </div>
+
+    {% include 'carCard.html' %}
+
+    <div id='cont'>
+    </div>
+
+
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            jQuery("#carname_model").chained("#carname_mark");
+        });
+    </script>
+
+    {% endblock content %}

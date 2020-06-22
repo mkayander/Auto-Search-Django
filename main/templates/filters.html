@@ -1,0 +1,43 @@
+{% extends 'wrap.html' %}
+
+
+{% block title %}
+Сохранённые фильтры
+{% endblock title %}
+
+{% block content %}
+    <input type="button" class="btn btn-outline-info" value="Назад" onclick="history.back()">
+    <hr>
+    {% for filt in data %}
+        <div id="filterCard" class="card shadow-sm my-2">
+            <div class="card-header py-2">
+                <div class="row justify-content-between">
+                    <div class="col-8">
+                        <h5 id="ctitle" class="card-title allign-middle mb-0">
+                            {{filt.carname_mark}} {{filt.carname_model}} {{filt.cities}}
+                        </h5>
+                    </div>
+                    <div class="mx-1">
+                        <button id="delete" type="button" class="btn btn-sm btn-outline-danger">&#10005</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <div class="mx-2">
+                        <h6 id="cprice" class="card-text">Всего результатов: {{filt.quantity}}</h6>
+                        <h6 id="cyear" class="card-text">...</h6>
+                    </div>
+                    <div class="mx-2">
+                        <p id="csite">Создано {{filt.created_at}}</p>
+                        <a id="edit" href="{% url 'edit_filter' saved_filter=filt.slug %}" class="btn btn-outline-info">Редактировать</a>
+                        <a id="edit" href="{% url 'saved' slug=filt.slug %}" class="btn btn-outline-primary">Просмотреть результаты</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+<p></p>
+<p></p>
+{% endblock content %}

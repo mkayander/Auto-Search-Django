@@ -1,0 +1,48 @@
+{% extends 'wrap.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+Поиск авто
+{% endblock title %}
+
+{% block content %}
+{% load static %}
+<script src="{% static "js/main.js" %}"></script>
+<script src="{% static "js/filterParams.js" %}"></script>
+<script src="{% static "js/jquery.chained.js" %}"></script>
+
+
+    <div id="mainPanel" class="card shadow-sm my-2">
+        <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'index' %}">Автомобиль</a>
+                </li>
+                <li class="nav-item disabled">
+                    <a class="nav-link" href="{% url 'otherSearch' %}" tabindex="-1" aria-disabled="true">Вещь</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="card-body">
+        
+        </div>
+    </div>
+    
+   
+    <div id="div_messages2" class='mt-3'>
+    </div>
+
+    {% include 'carCard.html' %}
+
+    <div id='cont'>
+    </div>
+
+    {{filter_params|json_script:"savedfilter-data"}}
+
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            jQuery("#carname_model").chained("#carname_mark");
+        });
+    </script>
+
+    {% endblock content %}

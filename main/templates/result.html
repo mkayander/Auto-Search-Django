@@ -1,0 +1,24 @@
+{% extends 'wrap.html' %}
+{% block title %}
+    Найденые авто
+{% endblock title %}
+
+{% block content %}
+    <div class="d-flex justify-content-between">
+    <input type="button" class="btn btn-outline-info" value="Назад" onclick="history.back()">
+    <a href="archived" class="btn btn-outline-success">Архив</a> 
+    </div>
+    <hr>
+    {% for a in db_arr %}
+        <div class="container">
+            <h3><a href="{{ a.url }}" target="_blank" rel="noopener noreferrer">
+            {{ a.title }}, {{ a.year }}</a>, Цена: {{ a.price }}, {{ a.site }} {{ a.created_at }} 
+            </h3>
+        </div>
+    <hr>
+    {% endfor %}
+        <form action="{% url 'archiveAll' %}" method="post">
+        {% csrf_token %}
+            <button name="archive" value="{{ fid }}" type="submit" class="btn btn-primary">Отправить в архив</button>
+        </form>
+{% endblock content %}

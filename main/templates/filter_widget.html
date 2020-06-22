@@ -1,0 +1,156 @@
+<div id="mainPanel" class="card shadow-sm my-2">
+        <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'index' %}">Автомобиль</a>
+                </li>
+                <li class="nav-item disabled">
+                    <a class="nav-link" href="{% url 'otherSearch' %}" tabindex="-1" aria-disabled="true">Вещь</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="card-body">
+            <form action="" method="POST" id="send">
+                {% csrf_token %}
+                <input id="cityCount" type="hidden" name="cityCount" value="1"></input>
+                <div class="form-row" id="cityRow0">
+                    <div class="form-group col-9">
+                        <input id="inputCity0" class="form-control" name="city0" list="cities"
+                            placeholder="Город" />
+                        <datalist id="cities">
+                            {% for region in regionDB %}
+                            <option value="{{ region.name }}">{{ region.name }}</option>
+                            {% endfor %}
+                            {% for city in cityDB %}
+                            <option value="{{ city.name }}">{{ city.name }}</option>
+                            {% endfor %}
+                        </datalist>
+                    </div>
+                    <div class="form-group col-3">
+                        <button class="btn btn-outline-danger" id="delbutton" type="button" hidden="true"
+                            onclick="delCity()">Удалить</button>
+                    </div>
+                </div>
+                <button class="btn btn-sm btn-outline-primary" id="addbutton" type="button"
+                    onclick="addCity()">Добавить
+                    город</button>
+                <div class="form-row mt-3">
+                    <div class="form-group col-md-6">
+                        <select class="form-control" name="carname_mark" id="carname_mark">
+                            <option value="" hidden>Марка машины</option>
+                            <option value="">Все</option>
+                            {% for a in carMark %}
+                            <option value="{{ a.name }}">{{ a.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <select class="form-control" name="carname_model" id="carname_model">
+                            <option value="">Модель машины</option>
+                            {% for a in carModel %}
+                            <option data-chained="{{ a.parentMark }}" value="{{ a.name }}">{{ a.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <select class="form-control" name="hull" id="hull">
+                            <option value="" hidden="">Кузов</option>
+                            <option value="">Все</option>
+                            <option value="sedan">Седан</option>
+                            <option value="hetchbek">Хетчбек</option>
+                            <option value="universal">Универсал</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <select class="form-control" name="fuel" id="fuel">
+                            <option value="" hidden="">Топливо</option>
+                            <option value="">Все</option>
+                            <option value="benzin">Бензин</option>
+                            <option value="dizel">Дизель</option>
+                            <option value="gibrid">Гибрид</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <select class="form-control" name="transm" id="transm">
+                            <option value="" hidden="">Трансмиссия</option>
+                            <option value="">Все</option>
+                            <option value="mehanika">Механика</option>
+                            <option value="avtomat">Автомат</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <select class="form-control" name="radius" id="radius">
+                            <option value="" hidden="">Радиус</option>
+                            <option value="">0</option>
+                            <option value="100">100</option>
+                            <option value="200">200</option>
+                            <option value="300">300</option>
+                            <option value="400">400</option>
+                            <option value="500">500</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <input id="price_from" class="form-control" type="number" name="price_from" min="0" value=""
+                            placeholder="Цена от">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input id="price_to" class="form-control" type="number" name="price_to" min="0" value=""
+                            placeholder="Цена до">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <select class="form-control" name="year_from" id="year_from">
+                            <option value="" hidden="">Год от</option>
+                            {% for a, b in year_from_to.items %}
+                            <option value="{{ a }}">{{ a }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <select class="form-control" name="year_to" id="year_to">
+                            <option value="" hidden="">Год до</option>
+                            {% for a, b in year_from_to.items %}
+                            <option value="{{ a }}">{{ a }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <select class="form-control" name="engine_from" id="engine_from">
+                            <option value="" hidden="">Объем двигателя от</option>
+                            {% for a, b in value_from_to.items %}
+                            <option value="{{ a }}">{{ a }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <select class="form-control" name="engine_to" id="engine_to">
+                            <option value="" hidden="">Объем двигателя до</option>
+                            {% for a, b in value_from_to.items %}
+                            <option value="{{ a }}">{{ a }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group d-flex flex-row-reverse">
+                    <button id="sendBtn" type="button" class="btn btn-primary btn-lg"
+                        onclick="sendFilter('{{ csrf_token }}')">
+                        <span id="sendText">Отправить</span>
+                        <span id="sendSpinner" style="display: none"
+                            class="spinner-border spinner-border-sm my-1" role="status"
+                            aria-hidden="true"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>

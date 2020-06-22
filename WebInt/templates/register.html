@@ -1,0 +1,18 @@
+{% extends 'wrap.html' %}
+
+{% block title %}
+    Регистрация
+{% endblock title %}
+
+{% block content %}
+    <h1 class="mt-4">Регистрация</h1>
+    <div class="col-4">
+        <form action="" method="post">
+            {% csrf_token %}
+            
+            {{ form.as_p }}
+            
+        <button type="submit" class="btn btn-primary">Регистрация</button>
+        </form>
+    </div>
+{% endblock content %}
