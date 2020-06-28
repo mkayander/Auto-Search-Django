@@ -50,11 +50,9 @@
                         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span>{{ user.username }}
-                            <img class="rounded-circle ml-1" src='{{ user.profile.image.url }}' width="30" height="30" alt=" Профиль">
                             </span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href={% url 'profile_page' %}>Профиль</a>
                             <a class="dropdown-item" href="#">Настройки</a>
                             <div class="dropdown-divider"></div>
                             <a href={% url 'logout_page' %} class="dropdown-item btn btn-outline-light" type="submit">Выйти</a>

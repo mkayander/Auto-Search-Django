@@ -23,14 +23,7 @@ ALLOWED_HOSTS = [
 
 # Application definition
 
-INSTALLED_APPS = [
-    'main',
-    'account',
-    'users.apps.UsersConfig',
-    'crispy_forms',
-    'rest_framework',
-    'rest_framework.authtoken',
-    'django_filters',
+DJANGO_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.humanize',
@@ -40,13 +33,24 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+THIRD_PARTY_APPS = [
+    'crispy_forms',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'django_filters',
+]
+
+LOCAL_APPS = [
+    'main',
+    'account',
+]
+
+INSTALLED_APPS = DJANGO_APPS + \
+                 THIRD_PARTY_APPS + \
+                 LOCAL_APPS
+
+
 REST_FRAMEWORK = {
-    # Use Django's standard `django.contrib.auth` permissions,
-    # or allow read-only access for unauthenticated users.
-    # 'DEFAULT_AUTHENTICATION_CLASSES': [
-    #     'rest_framework.authentication.BasicAuthentication',
-    #     'rest_framework.authentication.SessionAuthentication',
-    # ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
@@ -112,7 +116,7 @@ CELERY_RESULT_BACKEND = 'redis://' + REDIS_HOST + ':' + REDIS_PORT + '/0'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'inqer.net@gmail.com'
-EMAIL_HOST_PASSWORD = 'Hw&YQ2DxmjC#$uZdp%^K'
+EMAIL_HOST_PASSWORD = os.environ.get('AUTOSEARCH_SMTP_PASSWD')
 EMAIL_PORT = 587
 
 # Database
@@ -120,8 +124,12 @@ EMAIL_PORT = 587
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'django_autosearch',
+        'USER': 'django',
+        'PASSWORD': os.environ.get("AUTOSEARCH_PSQL_PASSWD"),
+        'HOST': 'localhost',
+        'PORT': '5432'
     }
 }
 
@@ -172,5 +180,6 @@ MEDIA_URL = '/media/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+# Login redirect settings
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = 'index'
