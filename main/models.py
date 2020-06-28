@@ -1,26 +1,10 @@
 from django.db import models
-from django.utils.crypto import get_random_string
 from pytils.translit import slugify
 
 from account.models import Account
 
 
-# class BaseModel(models.Model, metaclass=ABCMeta):
-#
-#     @abstractmethod
-#     def get_slug(self):
-#         pass
-#
-#     def __str__(self):
-#         return self.get_slug()
-#
-#     class Meta:
-#         abstract = True
-
-
 class AbstractOptionModel(models.Model):
-    slug = models.SlugField(unique=True, primary_key=True)
-    # name = models.CharField(max_length=60, unique=True, primary_key=True)
     isPopular = models.BooleanField(default=False)
     popularCount = models.PositiveIntegerField(default=0)
 
@@ -37,12 +21,11 @@ class AbstractOptionModel(models.Model):
 
     class Meta:
         abstract = True
-        ordering = ['slug']
 
 
 class AbstractElementModel(models.Model):
-    slug = models.SlugField(blank=True, null=True, unique=True)
-    e_id = models.CharField(max_length=100)
+    slug = models.SlugField(unique=True)
+    e_id = models.CharField(max_length=100, primary_key=True)
     archived = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True, editable=True)
     site = models.CharField(max_length=10)
@@ -62,8 +45,6 @@ class AbstractElementModel(models.Model):
 
 
 class AbstractBaseFilterModel(models.Model):
-    initialized = models.BooleanField(default=False)
-    slug = models.SlugField(blank=True, null=True, unique=True, help_text="Идентификатор")
     owner = models.ForeignKey(Account, related_name="", on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(default=0, verbose_name="Результатов", help_text="По данному фильтру")
     radius = models.PositiveSmallIntegerField(verbose_name="Радиус поиска", help_text="В километрах", blank=True,
@@ -74,30 +55,13 @@ class AbstractBaseFilterModel(models.Model):
     refresh_count = models.PositiveIntegerField(default=0, verbose_name="Количество обновлений",
                                                 help_text="Сколько раз была обновлена информация по фильтру")
 
-    def save(self, *args, **kwargs):
-        if self.pk is None:
-            self.slug = slugify(str(self)) + str(get_random_string(length=32))
-        elif self.initialized:
-            self.slug = f"{slugify(str(self))}{self.pk}"
-        super().save(*args, **kwargs)
-        # else:
-        # self.slug = slugify(str(self)) + str(self.pk)
-        # super().save(*args, **kwargs)
-
-    def on_post_save(self):
-        # TODO: check if there's a better way to add PK to the SLUG field
-        if not self.initialized:
-            self.slug = slugify(str(self)) + "-" + str(self.pk)
-            self.initialized = True
-            self.save()
-
     class Meta:
         abstract = True
         ordering = ['created_at']
 
 
 class AbstractLocationModel(models.Model):
-    slug = models.SlugField(unique=True, primary_key=True)
+    slug = models.SlugField(unique=True)
     name = models.CharField(max_length=60, unique=True)
     avito = models.CharField(max_length=60)
     autoru = models.CharField(max_length=60)
@@ -110,7 +74,8 @@ class AbstractLocationModel(models.Model):
         return self.name
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.name)
+        if not self.slug:
+            self.slug = slugify(self.name)
         super().save(*args, **kwargs)
 
     class Meta:
@@ -127,11 +92,6 @@ class RegionDB(AbstractLocationModel):
 
 class CityDB(AbstractLocationModel):
     region = models.ForeignKey(RegionDB, related_name='cities', on_delete=models.CASCADE, null=True)
-    region_slug = models.CharField(max_length=100, default="")
-
-    def save(self, *args, **kwargs):
-        self.region_slug = self.region.slug
-        super().save(*args, **kwargs)
 
 
 class CarMark(AbstractOptionModel):
@@ -140,35 +100,24 @@ class CarMark(AbstractOptionModel):
     def __str__(self):
         return self.name
 
-    def save(self, *args, **kwargs):
-        self.slug = slugify(self.name)
-        super().save(*args, **kwargs)
-
 
 class CarModel(AbstractOptionModel):
     name = models.CharField(max_length=60)
-    parentMark = models.ForeignKey(CarMark, related_name='models', on_delete=models.CASCADE, null=True)
+    mark = models.ForeignKey(CarMark, related_name='models', on_delete=models.CASCADE)
 
     def __str__(self):
-        return f'{self.parentMark.name} {self.name}'
-
-    def save(self, *args, **kwargs):
-        self.slug = self.get_slug()
-        super().save(*args, **kwargs)
+        return f'{self.mark.name} {self.name}'
 
 
 class CarFilter(AbstractBaseFilterModel):
     owner = models.ForeignKey(Account, related_name='filters', on_delete=models.CASCADE)
-
-    # carname_mark = models.CharField(max_length=30, verbose_name="Марка", blank=True)
-    # carname_model = models.CharField(max_length=30, verbose_name="Модель", blank=True)
     regions = models.ManyToManyField('RegionDB', related_name="filters")
     cities = models.ManyToManyField('CityDB', related_name="filters")
     car_marks = models.ManyToManyField(CarMark, related_name="filters")
     car_models = models.ManyToManyField(CarModel, related_name="filters")
     hull = models.CharField(max_length=20, verbose_name="Кузов", blank=True)
     fuel = models.CharField(max_length=20, verbose_name="Тип двигателя", blank=True)
-    transm = models.CharField(max_length=20, verbose_name="Трансмиссия", blank=True)
+    transmission = models.CharField(max_length=20, verbose_name="Трансмиссия", blank=True)
     year_from = models.PositiveSmallIntegerField(verbose_name="Год выпуска От", blank=True, null=True)
     year_to = models.PositiveSmallIntegerField(verbose_name="Год выпуска До", blank=True, null=True)
     engine_from = models.CharField(max_length=4, verbose_name="Объём двигателя От", blank=True)
@@ -184,40 +133,12 @@ class CarFilter(AbstractBaseFilterModel):
         return f'{self.owner.username} {marks_names}{models_names}{city_names}{region_names}'
 
 
-# class Location(models.Model):
-#     filter = models.ForeignKey(CarFilter, related_name="locations", on_delete=models.CASCADE)
-#     region = models.ForeignKey(RegionDB, related_name="locations", on_delete=models.CASCADE)
-#     city = models.ForeignKey(CityDB, related_name="locations", on_delete=models.CASCADE)
-#     use_city = models.BooleanField(default=False)
-#
-#     def save(self, *args, **kwargs):
-#         if self.city is None:
-#             self.use_city = False
-#         else:
-#             self.use_city = True
-#         super().save(*args, **kwargs)
-#
-#
-# class CarOption(models.Model):
-#     filter = models.ForeignKey(CarFilter, related_name="locations", on_delete=models.CASCADE)
-#     mark = models.ForeignKey(CarMark, related_name="car_options", on_delete=models.CASCADE)
-#     model = models.ForeignKey(CarModel, related_name="car_options", on_delete=models.CASCADE)
-#     use_model = models.BooleanField(default=False)
-#
-#     def save(self, *args, **kwargs):
-#         if self.model is None:
-#             self.use_model = False
-#         else:
-#             self.use_model = True
-
-
 class CarElement(AbstractElementModel):
     """Модель результата поиска - автомобиль"""
-    parentFilter = models.ForeignKey(CarFilter, related_name='cars', on_delete=models.CASCADE)
     year = models.PositiveIntegerField(blank=True, null=True)
 
     def __str__(self):
-        return f'{self.e_id} {self.parentFilter.owner.username} {self.pk}'
+        return f'{self.e_id} {self.pk}'
 
 
 class OtherFilter(AbstractBaseFilterModel):
@@ -225,11 +146,10 @@ class OtherFilter(AbstractBaseFilterModel):
     owner = models.ForeignKey(Account, related_name='other_filters', on_delete=models.CASCADE)
 
     def __str__(self):
-        return f'{self.owner} {self.find} {self.cities}'
+        return f'{self.owner} {self.find}'
 
 
 class OtherElement(AbstractElementModel):
-    parentFilter = models.ForeignKey(OtherFilter, related_name='cars', on_delete=models.CASCADE)
 
     def __str__(self):
-        return f'{self.e_id} {self.parentFilter.owner.username} {self.pk}'
+        return f'{self.e_id} {self.pk}'

@@ -15,7 +15,6 @@ mailbox_attachments/
 media/
 
 **/migrations/*
-**/migrations/0001_initial.py
 
 ### Django.Python Stack ###
 # Byte-compiled / optimized / DLL files

@@ -1,16 +1,9 @@
-from abc import ABC
-
+from django.contrib.auth import authenticate
+from django.utils.translation import gettext_lazy as _
 from rest_framework import serializers
-from rest_framework.authtoken.serializers import AuthTokenSerializer
 
 from api.validators import is_email_address_valid
 from main.models import CarElement, CarFilter, CarMark, CarModel, CityDB, RegionDB, Account
-
-
-from django.contrib.auth import authenticate
-from django.utils.translation import gettext_lazy as _
-
-from rest_framework import serializers
 
 
 class EmailAuthTokenSerializer(serializers.Serializer):
@@ -44,11 +37,6 @@ class EmailAuthTokenSerializer(serializers.Serializer):
 
 
 class RegionDBSerializer(serializers.ModelSerializer):
-    # url = serializers.SlugRelatedField(
-    #     many=True,
-    #     read_only=True,
-    #     slug_field='slug'
-    # )
     class Meta:
         model = RegionDB
         fields = '__all__'
@@ -59,15 +47,9 @@ class RegionDBSerializer(serializers.ModelSerializer):
 
 
 class CityDBSerializer(serializers.ModelSerializer):
-    # region = serializers.HyperlinkedRelatedField(many=True, view_name='main: regiondb-detail', read_only=True)
-    # region = serializers.HyperlinkedIdentityField(view_name='regions-detail')
-    # region = RegionDBSerializer()
-    # region_slug = serializers.CharField(source="region.slug")
-
     class Meta:
         model = CityDB
         fields = '__all__'
-        # fields = ('name', 'url', 'avitoCity', 'region')
         lookup_field = 'slug'
         extra_kwargs = {
             'url': {'lookup_field': 'slug'}
@@ -94,37 +76,22 @@ class CarModelSerializer(serializers.ModelSerializer):
 
 class CarFilterSerializer(serializers.ModelSerializer):
     owner = serializers.HiddenField(default=serializers.CurrentUserDefault())
-    # car_marks = CarMarkSerializer(read_only=True, many=True)
-    # car_models = CarModelSerializer(read_only=True, many=True)
-    # regions = RegionDBSerializer(read_only=True, many=True)
-    # cities = CityDBSerializer(read_only=True, many=True)
 
     class Meta:
         model = CarFilter
         fields = '__all__'
         read_only_fields = ('owner', 'id', 'slug', 'fid', 'quantity', 'count')
-        # lookup_field = 'id'
-        # extra_kwargs = {
-        #     'url': {'lookup_field': 'id'}
-        # }
 
 
 class CarElementSerializer(serializers.ModelSerializer):
-    # parentFilter = serializers.RelatedField()
     pf_slug = serializers.CharField(source="parentFilter.slug")
 
     class Meta:
         model = CarElement
         fields = '__all__'
-        # fields = ('url','e_id','title','car_url','slug','archived','site','year','price','created_at','parentFilter')
-        # lookup_field = 'slug'
-        # extra_kwargs = {
-        #     'url': {'lookup_field': 'slug'}
-        # }
 
 
 class AccountSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = Account
         fields = ["id",
@@ -150,7 +117,6 @@ class RegistrationSerializer(serializers.ModelSerializer):
         }
 
     def save(self, **kwargs):
-        # super().save(**kwargs)
         password = self.validated_data['password']
         password2 = self.validated_data['password2']
         if password != password2:
@@ -165,18 +131,7 @@ class RegistrationSerializer(serializers.ModelSerializer):
         return user
 
 
-# class ProfileSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Profile
-#         fields = ['id', 'image', 'is_verified', 'user']
-#         read_only_fields = ['id', 'is_verified', 'user']
-
-
 class AccountPropertiesSerializer(serializers.ModelSerializer):
-    # profile = ProfileSerializer()
-    # profile_id = serializers.PrimaryKeyRelatedField(source='profile', read_only=True)
-
     class Meta:
         model = Account
         fields = ['pk', 'email', 'username']
-        # read_only_fields = ['pk']

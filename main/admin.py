@@ -4,42 +4,42 @@ from .models import CarElement, CarFilter, OtherFilter, CityDB, CarMark, CarMode
 
 
 class CityDBAdmin(admin.ModelAdmin):
-    list_display = ('name', 'region', 'slug', 'isPopular')
+    # list_display = ('name', 'region', 'slug', 'isPopular')
     search_fields = ['name', 'slug']
     ordering = ('name', )
 
 
 class RegionDBAdmin(admin.ModelAdmin):
-    list_display = ('name', 'slug', 'isPopular')
+    # list_display = ('name', 'slug', 'isPopular')
     search_fields = ['name', 'slug']
     ordering = ('name', )
 
 
 class CarMarkAdmin(admin.ModelAdmin):
-    list_display = ('name', 'slug', 'isPopular')
+    # list_display = ('name', 'slug', 'isPopular')
     search_fields = ['name']
 
 
 class CarModelAdmin(admin.ModelAdmin):
-    list_display = ('name', 'pk', 'slug', 'parentMark', 'isPopular')
+    # list_display = ('name', 'pk', 'slug', 'parentMark', 'isPopular')
     search_fields = ['name', 'pk']
 
 
 class CarElementAdmin(admin.ModelAdmin):
-    list_display = ('e_id', 'parentFilter', 'created_at')
+    # list_display = ('e_id', 'filter', 'created_at')
     search_fields = ['e_id', 'pk']
 
 
 class CarFilterAdmin(admin.ModelAdmin):
-    list_display = ('__str__', 'slug', 'owner', 'refresh_count', 'created_at')
+    # list_display = ('__str__', 'slug', 'owner', 'refresh_count', 'created_at')
     search_fields = ['slug']
-    readonly_fields = ['created_at', 'refresh_count', 'quantity', 'initialized', 'slug']
+    # readonly_fields = ['created_at', 'refresh_count', 'quantity', 'initialized', 'slug']
 
 
 class OtherFilterAdmin(admin.ModelAdmin):
-    list_display = ('__str__', 'slug', 'owner', 'created_at')
+    # list_display = ('__str__', 'slug', 'owner', 'created_at')
     search_fields = ['slug']
-    readonly_fields = ['created_at', 'refresh_count', 'quantity', 'initialized']
+    # readonly_fields = ['created_at', 'refresh_count', 'quantity', 'initialized']
 
 
 admin.site.register(CarElement, CarElementAdmin)
