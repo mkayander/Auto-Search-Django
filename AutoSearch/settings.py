@@ -43,6 +43,7 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     'main',
     'account',
+    'api'
 ]
 
 INSTALLED_APPS = DJANGO_APPS + \

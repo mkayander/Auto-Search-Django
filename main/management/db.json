@@ -3,596 +3,497 @@
         {
             "isPopular": false,
             "name": "AC",
-            "popularCount": 1,
-            "slug": "ac"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Acura",
-            "popularCount": 2,
-            "slug": "acura"
+            "popularCount": 2
         },
         {
             "isPopular": false,
             "name": "Alpina",
-            "popularCount": 1,
-            "slug": "alpina"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Aro",
-            "popularCount": 1,
-            "slug": "aro"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Asia",
-            "popularCount": 1,
-            "slug": "asia"
+            "popularCount": 1
         },
         {
             "isPopular": true,
             "name": "Audi",
-            "popularCount": 164,
-            "slug": "audi"
+            "popularCount": 164
         },
         {
             "isPopular": false,
             "name": "BaW",
-            "popularCount": 1,
-            "slug": "baw"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Bentley",
-            "popularCount": 1,
-            "slug": "bentley"
+            "popularCount": 1
         },
         {
             "isPopular": true,
             "name": "BMW",
-            "popularCount": 13,
-            "slug": "bmw"
+            "popularCount": 13
         },
         {
             "isPopular": false,
             "name": "Brilliance",
-            "popularCount": 1,
-            "slug": "brilliance"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Buick",
-            "popularCount": 1,
-            "slug": "buick"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "BYD",
-            "popularCount": 1,
-            "slug": "byd"
+            "popularCount": 1
         },
         {
             "isPopular": true,
             "name": "Cadillac",
-            "popularCount": 3,
-            "slug": "cadillac"
+            "popularCount": 3
         },
         {
             "isPopular": false,
             "name": "Changan",
-            "popularCount": 1,
-            "slug": "changan"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Chery",
-            "popularCount": 1,
-            "slug": "chery"
+            "popularCount": 1
         },
         {
             "isPopular": true,
             "name": "Chevrolet",
-            "popularCount": 3,
-            "slug": "chevrolet"
+            "popularCount": 3
         },
         {
             "isPopular": false,
             "name": "Chrysler",
-            "popularCount": 1,
-            "slug": "chrysler"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Citroen",
-            "popularCount": 1,
-            "slug": "citroen"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Dacia",
-            "popularCount": 1,
-            "slug": "dacia"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Daewoo",
-            "popularCount": 1,
-            "slug": "daewoo"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Daihatsu",
-            "popularCount": 1,
-            "slug": "daihatsu"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Daimler",
-            "popularCount": 1,
-            "slug": "daimler"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Datsun",
-            "popularCount": 1,
-            "slug": "datsun"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Derways",
-            "popularCount": 1,
-            "slug": "derways"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Dodge",
-            "popularCount": 1,
-            "slug": "dodge"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Doninvest",
-            "popularCount": 1,
-            "slug": "doninvest"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "DS",
-            "popularCount": 1,
-            "slug": "ds"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Eagle",
-            "popularCount": 1,
-            "slug": "eagle"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "FaW",
-            "popularCount": 1,
-            "slug": "faw"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Ferrari",
-            "popularCount": 1,
-            "slug": "ferrari"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "FIaT",
-            "popularCount": 1,
-            "slug": "fiat"
+            "popularCount": 1
         },
         {
             "isPopular": true,
             "name": "Ford",
-            "popularCount": 15,
-            "slug": "ford"
+            "popularCount": 15
         },
         {
             "isPopular": false,
             "name": "Foton",
-            "popularCount": 1,
-            "slug": "foton"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "GaC",
-            "popularCount": 1,
-            "slug": "gac"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Geely",
-            "popularCount": 1,
-            "slug": "geely"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Genesis",
-            "popularCount": 1,
-            "slug": "genesis"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "GMC",
-            "popularCount": 1,
-            "slug": "gmc"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Great_Wall",
-            "popularCount": 1,
-            "slug": "greatwall"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Hafei",
-            "popularCount": 1,
-            "slug": "hafei"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Haima",
-            "popularCount": 1,
-            "slug": "haima"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Haval",
-            "popularCount": 1,
-            "slug": "haval"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Hawtai",
-            "popularCount": 1,
-            "slug": "hawtai"
+            "popularCount": 1
         },
         {
             "isPopular": true,
             "name": "Honda",
-            "popularCount": 13,
-            "slug": "honda"
+            "popularCount": 13
         },
         {
             "isPopular": false,
             "name": "Hummer",
-            "popularCount": 1,
-            "slug": "hummer"
+            "popularCount": 1
         },
         {
             "isPopular": true,
             "name": "Hyundai",
-            "popularCount": 2,
-            "slug": "hyundai"
+            "popularCount": 2
         },
         {
             "isPopular": true,
             "name": "Infiniti",
-            "popularCount": 1,
-            "slug": "infiniti"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Isuzu",
-            "popularCount": 1,
-            "slug": "isuzu"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Iveco",
-            "popularCount": 1,
-            "slug": "iveco"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "JAC",
-            "popularCount": 1,
-            "slug": "jac"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Jaguar",
-            "popularCount": 1,
-            "slug": "jaguar"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Jeep",
-            "popularCount": 1,
-            "slug": "jeep"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "JMC",
-            "popularCount": 1,
-            "slug": "jmc"
+            "popularCount": 1
         },
         {
             "isPopular": true,
             "name": "KIA",
-            "popularCount": 3,
-            "slug": "kia"
+            "popularCount": 3
         },
         {
             "isPopular": false,
             "name": "Lamborghini",
-            "popularCount": 1,
-            "slug": "lamborghini"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Lancia",
-            "popularCount": 1,
-            "slug": "lancia"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "LDV",
-            "popularCount": 1,
-            "slug": "ldv"
+            "popularCount": 1
         },
         {
             "isPopular": true,
             "name": "Lexus",
-            "popularCount": 2,
-            "slug": "lexus"
+            "popularCount": 2
         },
         {
             "isPopular": false,
             "name": "LIFAN",
-            "popularCount": 1,
-            "slug": "lifan"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Lincoln",
-            "popularCount": 1,
-            "slug": "lincoln"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Luxgen",
-            "popularCount": 1,
-            "slug": "luxgen"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Maserati",
-            "popularCount": 1,
-            "slug": "maserati"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Maybach",
-            "popularCount": 1,
-            "slug": "maybach"
+            "popularCount": 1
         },
         {
             "isPopular": true,
             "name": "Mazda",
-            "popularCount": 121,
-            "slug": "mazda"
+            "popularCount": 121
         },
         {
             "isPopular": false,
             "name": "McLaren",
-            "popularCount": 1,
-            "slug": "mclaren"
+            "popularCount": 1
         },
         {
             "isPopular": true,
             "name": "Mercedes-Benz",
-            "popularCount": 1,
-            "slug": "mercedes-benz"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Mercury",
-            "popularCount": 1,
-            "slug": "mercury"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "MG",
-            "popularCount": 1,
-            "slug": "mg"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "MINI",
-            "popularCount": 1,
-            "slug": "mini"
+            "popularCount": 1
         },
         {
             "isPopular": true,
             "name": "Mitsubishi",
-            "popularCount": 4,
-            "slug": "mitsubishi"
+            "popularCount": 4
         },
         {
             "isPopular": true,
             "name": "Nissan",
-            "popularCount": 3,
-            "slug": "nissan"
+            "popularCount": 3
         },
         {
             "isPopular": false,
             "name": "Oldsmobile",
-            "popularCount": 1,
-            "slug": "oldsmobile"
+            "popularCount": 1
         },
         {
             "isPopular": true,
             "name": "Opel",
-            "popularCount": 1,
-            "slug": "opel"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Peugeot",
-            "popularCount": 1,
-            "slug": "peugeot"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Plymouth",
-            "popularCount": 1,
-            "slug": "plymouth"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Pontiac",
-            "popularCount": 1,
-            "slug": "pontiac"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Porsche",
-            "popularCount": 1,
-            "slug": "porsche"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Proton",
-            "popularCount": 1,
-            "slug": "proton"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Ravon",
-            "popularCount": 1,
-            "slug": "ravon"
+            "popularCount": 1
         },
         {
             "isPopular": true,
             "name": "Renault",
-            "popularCount": 1,
-            "slug": "renault"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Rover",
-            "popularCount": 1,
-            "slug": "rover"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Saab",
-            "popularCount": 1,
-            "slug": "saab"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Saturn",
-            "popularCount": 1,
-            "slug": "saturn"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Scion",
-            "popularCount": 1,
-            "slug": "scion"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "SEAT",
-            "popularCount": 1,
-            "slug": "seat"
+            "popularCount": 1
         },
         {
             "isPopular": true,
             "name": "Skoda",
-            "popularCount": 2,
-            "slug": "skoda"
+            "popularCount": 2
         },
         {
             "isPopular": false,
             "name": "Smart",
-            "popularCount": 1,
-            "slug": "smart"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "SsangYong",
-            "popularCount": 1,
-            "slug": "ssangyong"
+            "popularCount": 1
         },
         {
             "isPopular": true,
             "name": "Subaru",
-            "popularCount": 1,
-            "slug": "subaru"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Suzuki",
-            "popularCount": 100,
-            "slug": "suzuki"
+            "popularCount": 100
         },
         {
             "isPopular": false,
             "name": "Tata",
-            "popularCount": 1,
-            "slug": "tata"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Tesla",
-            "popularCount": 1,
-            "slug": "tesla"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Tianma",
-            "popularCount": 1,
-            "slug": "tianma"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Tianye",
-            "popularCount": 1,
-            "slug": "tianye"
+            "popularCount": 1
         },
         {
             "isPopular": true,
             "name": "Toyota",
-            "popularCount": 1,
-            "slug": "toyota"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Volkswagen",
-            "popularCount": 4,
-            "slug": "volkswagen"
+            "popularCount": 4
         },
         {
             "isPopular": true,
             "name": "Volvo",
-            "popularCount": 1,
-            "slug": "volvo"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "Vortex",
-            "popularCount": 1,
-            "slug": "vortex"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "ZOTYE",
-            "popularCount": 1,
-            "slug": "zotye"
+            "popularCount": 1
         },
         {
             "isPopular": false,
             "name": "ZX",
-            "popularCount": 1,
-            "slug": "zx"
+            "popularCount": 1
         }
     ],
     "CarModel": [

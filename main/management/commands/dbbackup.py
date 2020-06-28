@@ -2,8 +2,8 @@ import asyncio
 import json
 
 from aiofile import AIOFile
+from django.apps import apps
 from django.core.management.base import BaseCommand
-
 from pytils.translit import slugify
 
 from main.models import RegionDB, CityDB, CarMark, CarModel
@@ -33,7 +33,7 @@ class Command(BaseCommand):
             saved_data = asyncio.run(read_json())
             for key, values in saved_data.items():
                 print(*['----------', f'Reloading -- {key}'], sep='\n')
-                model = globals()[key]
+                model = apps.get_model("main", key)
                 for obj in values:
                     if model.objects.filter(**obj).exists():
                         m = model.objects.get(**obj)
@@ -44,7 +44,7 @@ class Command(BaseCommand):
         elif 'restore' in options['load']:
             saved_data = asyncio.run(read_json())
             for key, values in saved_data.items():
-                model = globals()[key]
+                model = apps.get_model("main", key)
                 for obj in values:
                     try:
                         db_entry = model.objects.get(slug=obj['slug'])
@@ -54,10 +54,19 @@ class Command(BaseCommand):
 
             print("SUCCESS!")
 
+        elif 'load-marks' in options['load']:
+            saved_data = asyncio.run(read_json())
+            for obj in saved_data["CarMark"]:
+                model = apps.get_model("main", "CarMark")
+                # try:
+                #     model.objects.get(name=obj['slug'])
+                # except model.DoesNotExist:
+                print(f'Restoring -- {obj}')
+                model.objects.create(**obj)
+
         elif 'carmark-key-slugify' in options['load']:
             mutable_data = asyncio.run(read_json())
             for carmark in mutable_data['CarModel']:
-                # print(carmark)
                 print(carmark, carmark['parentMark_id'])
                 carmark['parentMark_id'] = slugify(carmark['parentMark_id'])
 
