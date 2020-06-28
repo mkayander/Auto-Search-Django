@@ -1,6 +1,6 @@
 from .views import update_filter_data
 from .models import CarFilter
-from WebInt.celery import app
+from AutoSearch.celery import app
 
 
 @app.task

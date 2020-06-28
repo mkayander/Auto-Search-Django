@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand, CommandError
-from WebInt.main.models import RegionDB, CityDB
+from AutoSearch.main.models import RegionDB, CityDB
 import json
 import transliterate
 
