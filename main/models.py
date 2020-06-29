@@ -8,17 +8,6 @@ class AbstractOptionModel(models.Model):
     isPopular = models.BooleanField(default=False)
     popularCount = models.PositiveIntegerField(default=0)
 
-    def get_slug(self):
-        new_slug = slugify(str(self))
-        qs = self.__class__.objects.filter(slug=new_slug).exclude(pk=self.pk)
-        if qs.exists():
-            alt_field = str(self.__class__._meta.get_fields()[4].value_from_object(self))
-            slug = slugify(new_slug + ' ' + alt_field)
-            print(f'Altering slug! -- {slug}! pk: {self.pk}')
-            return slug
-
-        return new_slug
-
     class Meta:
         abstract = True
 
@@ -61,8 +50,6 @@ class AbstractBaseFilterModel(models.Model):
 
 
 class AbstractLocationModel(models.Model):
-    slug = models.SlugField(unique=True)
-    name = models.CharField(max_length=60, unique=True)
     avito = models.CharField(max_length=60)
     autoru = models.CharField(max_length=60)
     drom = models.CharField(max_length=60)
@@ -71,39 +58,46 @@ class AbstractLocationModel(models.Model):
     isPopular = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.name
-
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.name)
-        super().save(*args, **kwargs)
+        return self.avito
 
     class Meta:
         abstract = True
-        ordering = ['name']
+        ordering = ['avito']
 
 
 # ---------------------------------------------------------------------------------------
 
 
 class RegionDB(AbstractLocationModel):
-    pass
+    name = models.CharField(max_length=60, primary_key=True)
 
 
 class CityDB(AbstractLocationModel):
+    name = models.CharField(max_length=60)
     region = models.ForeignKey(RegionDB, related_name='cities', on_delete=models.CASCADE, null=True)
 
 
 class CarMark(AbstractOptionModel):
-    name = models.CharField(max_length=60, unique=True)
+    name = models.CharField(max_length=60, primary_key=True)
+    slug = models.CharField(max_length=100)
+
+    class Meta:
+        ordering = ['name']
 
     def __str__(self):
         return self.name
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
 
 
 class CarModel(AbstractOptionModel):
     name = models.CharField(max_length=60)
     mark = models.ForeignKey(CarMark, related_name='models', on_delete=models.CASCADE)
+
+    class Meta:
+        ordering = ['name']
 
     def __str__(self):
         return f'{self.mark.name} {self.name}'
