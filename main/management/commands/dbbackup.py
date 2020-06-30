@@ -76,6 +76,18 @@ class Command(BaseCommand):
                 print(f'Restoring -- {obj}')
                 model.objects.create(**obj)
 
+        elif 'load-cities' in options['load']:
+            saved_data = asyncio.run(read_json())
+            for obj in saved_data["CityDB"]:
+                model = apps.get_model("main", "CityDB")
+                # try:
+                #     model.objects.get(name=obj['slug'])
+                # except model.DoesNotExist:
+                obj["region"] = RegionDB.objects.get(slug=obj["region_id"])
+                del obj["region_id"]
+                print(f'Restoring -- {obj}')
+                model.objects.create(**obj)
+
         elif 'carmark-key-slugify' in options['load']:
             mutable_data = asyncio.run(read_json())
             for carmark in mutable_data['CarModel']:

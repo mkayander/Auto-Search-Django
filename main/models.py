@@ -13,7 +13,6 @@ class AbstractOptionModel(models.Model):
 
 
 class AbstractElementModel(models.Model):
-    slug = models.SlugField(unique=True)
     e_id = models.CharField(max_length=100, primary_key=True)
     archived = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True, editable=True)
@@ -23,10 +22,6 @@ class AbstractElementModel(models.Model):
     price = models.PositiveIntegerField(blank=True, null=True)
     url = models.URLField(max_length=300, db_index=True, blank=True)
     img = models.URLField(max_length=300, db_index=True, blank=True)
-
-    def save(self, *args, **kwargs):
-        self.slug = slugify(str(self))
-        super().save(*args, **kwargs)
 
     class Meta:
         abstract = True
@@ -79,17 +74,12 @@ class CityDB(AbstractLocationModel):
 
 class CarMark(AbstractOptionModel):
     name = models.CharField(max_length=60, primary_key=True)
-    slug = models.CharField(max_length=100)
 
     class Meta:
         ordering = ['name']
 
     def __str__(self):
         return self.name
-
-    def save(self, *args, **kwargs):
-        self.slug = slugify(self.name)
-        super().save(*args, **kwargs)
 
 
 class CarModel(AbstractOptionModel):
