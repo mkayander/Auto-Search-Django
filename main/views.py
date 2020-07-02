@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseForbidden
 from django.shortcuts import render, redirect
 
-from .models import CarElement, CarFilter, CarMark, CarModel, CityDB, RegionDB
+from .models import CarResult, CarFilter, CarMark, CarModel, CityDB, RegionDB
 
 sys.path.insert(1, 'main/client/')
 
@@ -56,7 +56,7 @@ def filter_car_list(request):
 @login_required
 def archiveAll(request):
     filt = CarFilter.objects.get(fid=request.POST['archive'])
-    CarElement.objects.filter(parentFilter=filt).update(archived=True)
+    CarResult.objects.filter(parentFilter=filt).update(archived=True)
     # for a in db_arch:
     #     if a.archived == False:
     #         a.archived = True
@@ -74,8 +74,8 @@ def saved(request, slug, archived=''):
         return HttpResponseForbidden()
 
     if archived == 'archived':
-        db_arr = list(CarElement.objects.filter(parentFilter=filt, archived=True).order_by('-created_at'))
+        db_arr = list(CarResult.objects.filter(parentFilter=filt, archived=True).order_by('-created_at'))
     else:
-        db_arr = list(CarElement.objects.filter(parentFilter=filt, archived=False).order_by('-created_at'))
+        db_arr = list(CarResult.objects.filter(parentFilter=filt, archived=False).order_by('-created_at'))
 
     return render(request, 'result.html', {'fid': filt.fid, 'db_arr': db_arr})

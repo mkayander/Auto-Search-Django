@@ -1,18 +1,19 @@
 from django.db import models
-from pytils.translit import slugify
 
 from account.models import Account
 
 
-class AbstractOptionModel(models.Model):
-    isPopular = models.BooleanField(default=False)
-    popularCount = models.PositiveIntegerField(default=0)
+# --- Abstract Base Models --------------------------------------------------------------
+
+class StatisticsModel(models.Model):
+    is_popular = models.BooleanField(default=False)
+    request_count = models.PositiveIntegerField(default=0)
 
     class Meta:
         abstract = True
 
 
-class AbstractElementModel(models.Model):
+class ResultModel(models.Model):
     e_id = models.CharField(max_length=100, primary_key=True)
     archived = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True, editable=True)
@@ -25,11 +26,11 @@ class AbstractElementModel(models.Model):
 
     class Meta:
         abstract = True
-        ordering = ['price']
+        ordering = ['created_at']
 
 
-class AbstractBaseFilterModel(models.Model):
-    owner = models.ForeignKey(Account, related_name="", on_delete=models.CASCADE)
+class BaseFilterModel(models.Model):
+    owner = models.ForeignKey(Account, related_name="filters", on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(default=0, verbose_name="Результатов", help_text="По данному фильтру")
     radius = models.PositiveSmallIntegerField(verbose_name="Радиус поиска", help_text="В километрах", blank=True,
                                               default=0)
@@ -44,35 +45,29 @@ class AbstractBaseFilterModel(models.Model):
         ordering = ['created_at']
 
 
-class AbstractLocationModel(models.Model):
-    avito = models.CharField(max_length=60)
-    autoru = models.CharField(max_length=60)
-    drom = models.CharField(max_length=60)
-    youla = models.CharField(max_length=60)
-    popularCount = models.PositiveIntegerField(default=1)
-    isPopular = models.BooleanField(default=False)
-
-    def __str__(self):
-        return self.avito
+class SearchTargetModel(models.Model):
+    avito = models.CharField(max_length=60, blank=True)
+    autoru = models.CharField(max_length=60, blank=True)
+    drom = models.CharField(max_length=60, blank=True)
+    youla = models.CharField(max_length=60, blank=True)
 
     class Meta:
         abstract = True
-        ordering = ['avito']
 
 
 # ---------------------------------------------------------------------------------------
 
 
-class RegionDB(AbstractLocationModel):
+class RegionDB(SearchTargetModel):
     name = models.CharField(max_length=60, primary_key=True)
 
 
-class CityDB(AbstractLocationModel):
+class CityDB(SearchTargetModel):
     name = models.CharField(max_length=60)
     region = models.ForeignKey(RegionDB, related_name='cities', on_delete=models.CASCADE, null=True)
 
 
-class CarMark(AbstractOptionModel):
+class CarMark(SearchTargetModel):
     name = models.CharField(max_length=60, primary_key=True)
 
     class Meta:
@@ -82,7 +77,7 @@ class CarMark(AbstractOptionModel):
         return self.name
 
 
-class CarModel(AbstractOptionModel):
+class CarModel(SearchTargetModel):
     name = models.CharField(max_length=60)
     mark = models.ForeignKey(CarMark, related_name='models', on_delete=models.CASCADE)
 
@@ -93,7 +88,7 @@ class CarModel(AbstractOptionModel):
         return f'{self.mark.name} {self.name}'
 
 
-class CarFilter(AbstractBaseFilterModel):
+class CarFilter(BaseFilterModel):
     owner = models.ForeignKey(Account, related_name='filters', on_delete=models.CASCADE)
     regions = models.ManyToManyField('RegionDB', related_name="filters")
     cities = models.ManyToManyField('CityDB', related_name="filters")
@@ -117,7 +112,7 @@ class CarFilter(AbstractBaseFilterModel):
         return f'{self.owner.username} {marks_names}{models_names}{city_names}{region_names}'
 
 
-class CarElement(AbstractElementModel):
+class CarResult(ResultModel):
     """Модель результата поиска - автомобиль"""
     year = models.PositiveIntegerField(blank=True, null=True)
 
@@ -125,7 +120,7 @@ class CarElement(AbstractElementModel):
         return f'{self.e_id} {self.pk}'
 
 
-class OtherFilter(AbstractBaseFilterModel):
+class OtherFilter(BaseFilterModel):
     find = models.CharField(max_length=100)
     owner = models.ForeignKey(Account, related_name='other_filters', on_delete=models.CASCADE)
 
@@ -133,7 +128,7 @@ class OtherFilter(AbstractBaseFilterModel):
         return f'{self.owner} {self.find}'
 
 
-class OtherElement(AbstractElementModel):
+class OtherResult(ResultModel):
 
     def __str__(self):
         return f'{self.e_id} {self.pk}'

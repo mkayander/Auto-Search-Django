@@ -1,5 +1,4 @@
 from django.contrib.auth import user_logged_in
-from django.utils.translation import ugettext as _
 from rest_framework import viewsets, views, generics, permissions, status
 from rest_framework.authtoken.models import Token
 from rest_framework.authtoken.views import ObtainAuthToken
@@ -11,7 +10,7 @@ from rest_framework.schemas import ManualSchema
 from rest_framework.views import APIView
 
 from account.models import Account
-from main.models import CarElement, CarFilter, CarMark, CarModel, CityDB, RegionDB
+from main.models import CarResult, CarFilter, CarMark, CarModel, CityDB, RegionDB
 from .serializers import CarFilterSerializer, CarElementSerializer, CarMarkSerializer, CarModelSerializer, \
     RegionDBSerializer, CityDBSerializer, AccountSerializer, RegistrationSerializer, AccountPropertiesSerializer, \
     EmailAuthTokenSerializer
@@ -88,7 +87,7 @@ class CarFilterView(viewsets.ModelViewSet):
 
 
 class CarElementView(viewsets.ModelViewSet):
-    queryset = CarElement.objects.all()
+    queryset = CarResult.objects.all()
     serializer_class = CarElementSerializer
     permission_classes = (permissions.IsAuthenticated,)
     lookup_field = 'slug'
@@ -168,11 +167,11 @@ def get_car_element_view(request, item_id):
         print(f'get_car_element_view called -- {item_id=}')
         data = {}
         try:
-            car = CarElement.objects.get(id=item_id)
+            car = CarResult.objects.get(id=item_id)
             serializer = CarElementSerializer(instance=car)
             data = serializer.data
 
-        except CarElement.DoesNotExist as e:
+        except CarResult.DoesNotExist as e:
             data['error'] = str(e)
 
         finally:

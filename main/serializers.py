@@ -1,11 +1,11 @@
 from rest_framework import serializers
 
-from .models import CarElement, CarFilter, CarMark, CarModel, CityDB, RegionDB, Account
+from .models import CarResult, CarFilter, CarMark, CarModel, CityDB, RegionDB, Account
 
 
 class CarElementSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = CarElement
+        model = CarResult
         fields = '__all__'
 
 

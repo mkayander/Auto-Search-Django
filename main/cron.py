@@ -1,6 +1,8 @@
 from django_cron import CronJobBase, Schedule
-from .models import CarFilter, CarElement
+
+from .models import CarFilter
 from .views import update_filter_data
+
 
 class UpdateFiltersCron(CronJobBase):
     RUN_EVERY_MINS = 2

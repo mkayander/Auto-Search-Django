@@ -3,7 +3,7 @@ from django.utils.translation import gettext_lazy as _
 from rest_framework import serializers
 
 from api.validators import is_email_address_valid
-from main.models import CarElement, CarFilter, CarMark, CarModel, CityDB, RegionDB, Account
+from main.models import CarResult, CarFilter, CarMark, CarModel, CityDB, RegionDB, Account
 
 
 class EmailAuthTokenSerializer(serializers.Serializer):
@@ -87,7 +87,7 @@ class CarElementSerializer(serializers.ModelSerializer):
     pf_slug = serializers.CharField(source="parentFilter.slug")
 
     class Meta:
-        model = CarElement
+        model = CarResult
         fields = '__all__'
 
 

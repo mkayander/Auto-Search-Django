@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import CarElement, CarFilter, OtherFilter, CityDB, CarMark, CarModel, RegionDB
+from .models import CarResult, CarFilter, OtherFilter, CityDB, CarMark, CarModel, RegionDB
 
 
 class CityDBAdmin(admin.ModelAdmin):
@@ -42,7 +42,7 @@ class OtherFilterAdmin(admin.ModelAdmin):
     # readonly_fields = ['created_at', 'refresh_count', 'quantity', 'initialized']
 
 
-admin.site.register(CarElement, CarElementAdmin)
+admin.site.register(CarResult, CarElementAdmin)
 admin.site.register(CarFilter, CarFilterAdmin)
 admin.site.register(RegionDB, RegionDBAdmin)
 admin.site.register(CityDB, CityDBAdmin)
