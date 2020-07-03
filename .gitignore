@@ -22,6 +22,8 @@ media/
 *$py.class
 
 .idea
+.idea/*
+**/.idea/*
 
 # User-specific stuff
 .idea/**/workspace.xml
