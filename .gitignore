@@ -3,6 +3,11 @@
 *.pot
 *.pyc
 
+### Vim ###
+*~
+*.swp
+*.swo
+
 ### Django ###
 __pycache__/
 local_settings.py
