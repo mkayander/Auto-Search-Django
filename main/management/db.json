@@ -10218,6 +10218,554 @@
             "youla": ""
         }
     ],
+    "RegionDB": [
+        {
+            "autoru": "adygeya",
+            "avito": "adygeya",
+            "drom": "adygeja",
+            "name": "\u0410\u0434\u044b\u0433\u0435\u044f",
+            "youla": "adygeja"
+        },
+        {
+            "autoru": "altajskij_kraj",
+            "avito": "altajskij_kraj",
+            "drom": "altajskij_kraj",
+            "name": "\u0410\u043b\u0442\u0430\u0439\u0441\u043a\u0438\u0439 \u043a\u0440\u0430\u0439",
+            "youla": "altajskij_kraj"
+        },
+        {
+            "autoru": "amurskaja_obl.",
+            "avito": "amurskaja_obl.",
+            "drom": "amurskaja_obl.",
+            "name": "\u0410\u043c\u0443\u0440\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "amurskaja_obl."
+        },
+        {
+            "autoru": "arhangel'skaja_obl.",
+            "avito": "arhangel'skaja_obl.",
+            "drom": "arhangel'skaja_obl.",
+            "name": "\u0410\u0440\u0445\u0430\u043d\u0433\u0435\u043b\u044c\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "arhangel'skaja_obl."
+        },
+        {
+            "autoru": "astrahanskaja_obl.",
+            "avito": "astrahanskaja_obl.",
+            "drom": "astrahanskaja_obl.",
+            "name": "\u0410\u0441\u0442\u0440\u0430\u0445\u0430\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "astrahanskaja_obl."
+        },
+        {
+            "autoru": "bashkortostan(bashkirija)",
+            "avito": "bashkortostan(bashkirija)",
+            "drom": "bashkortostan(bashkirija)",
+            "name": "\u0411\u0430\u0448\u043a\u043e\u0440\u0442\u043e\u0441\u0442\u0430\u043d(\u0411\u0430\u0448\u043a\u0438\u0440\u0438\u044f)",
+            "youla": "bashkortostan(bashkirija)"
+        },
+        {
+            "autoru": "belgorodskaja_obl.",
+            "avito": "belgorodskaja_obl.",
+            "drom": "belgorodskaja_obl.",
+            "name": "\u0411\u0435\u043b\u0433\u043e\u0440\u043e\u0434\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "belgorodskaja_obl."
+        },
+        {
+            "autoru": "brjanskaja_obl.",
+            "avito": "brjanskaja_obl.",
+            "drom": "brjanskaja_obl.",
+            "name": "\u0411\u0440\u044f\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "brjanskaja_obl."
+        },
+        {
+            "autoru": "burjatija",
+            "avito": "burjatija",
+            "drom": "burjatija",
+            "name": "\u0411\u0443\u0440\u044f\u0442\u0438\u044f",
+            "youla": "burjatija"
+        },
+        {
+            "autoru": "vladimirskaja_obl.",
+            "avito": "vladimirskaja_obl.",
+            "drom": "vladimirskaja_obl.",
+            "name": "\u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "vladimirskaja_obl."
+        },
+        {
+            "autoru": "volgogradskaja_obl.",
+            "avito": "volgogradskaja_obl.",
+            "drom": "volgogradskaja_obl.",
+            "name": "\u0412\u043e\u043b\u0433\u043e\u0433\u0440\u0430\u0434\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "volgogradskaja_obl."
+        },
+        {
+            "autoru": "vologodskaja_obl.",
+            "avito": "vologodskaja_obl.",
+            "drom": "vologodskaja_obl.",
+            "name": "\u0412\u043e\u043b\u043e\u0433\u043e\u0434\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "vologodskaja_obl."
+        },
+        {
+            "autoru": "voronezhskaja_obl.",
+            "avito": "voronezhskaja_obl.",
+            "drom": "voronezhskaja_obl.",
+            "name": "\u0412\u043e\u0440\u043e\u043d\u0435\u0436\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "voronezhskaja_obl."
+        },
+        {
+            "autoru": "dagestan",
+            "avito": "dagestan",
+            "drom": "dagestan",
+            "name": "\u0414\u0430\u0433\u0435\u0441\u0442\u0430\u043d",
+            "youla": "dagestan"
+        },
+        {
+            "autoru": "evrejskaja_obl.",
+            "avito": "evrejskaja_obl.",
+            "drom": "evrejskaja_obl.",
+            "name": "\u0415\u0432\u0440\u0435\u0439\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "evrejskaja_obl."
+        },
+        {
+            "autoru": "ivanovskaja_obl.",
+            "avito": "ivanovskaja_obl.",
+            "drom": "ivanovskaja_obl.",
+            "name": "\u0418\u0432\u0430\u043d\u043e\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "ivanovskaja_obl."
+        },
+        {
+            "autoru": "irkutskaja_obl.",
+            "avito": "irkutskaja_obl.",
+            "drom": "irkutskaja_obl.",
+            "name": "\u0418\u0440\u043a\u0443\u0442\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "irkutskaja_obl."
+        },
+        {
+            "autoru": "kabardino-balkarija",
+            "avito": "kabardino-balkarija",
+            "drom": "kabardino-balkarija",
+            "name": "\u041a\u0430\u0431\u0430\u0440\u0434\u0438\u043d\u043e-\u0411\u0430\u043b\u043a\u0430\u0440\u0438\u044f",
+            "youla": "kabardino-balkarija"
+        },
+        {
+            "autoru": "kaliningradskaja_obl.",
+            "avito": "kaliningradskaja_obl.",
+            "drom": "kaliningradskaja_obl.",
+            "name": "\u041a\u0430\u043b\u0438\u043d\u0438\u043d\u0433\u0440\u0430\u0434\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "kaliningradskaja_obl."
+        },
+        {
+            "autoru": "kalmykija",
+            "avito": "kalmykija",
+            "drom": "kalmykija",
+            "name": "\u041a\u0430\u043b\u043c\u044b\u043a\u0438\u044f",
+            "youla": "kalmykija"
+        },
+        {
+            "autoru": "kaluzhskaja_obl.",
+            "avito": "kaluzhskaja_obl.",
+            "drom": "kaluzhskaja_obl.",
+            "name": "\u041a\u0430\u043b\u0443\u0436\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "kaluzhskaja_obl."
+        },
+        {
+            "autoru": "kamchatskaja_obl.",
+            "avito": "kamchatskaja_obl.",
+            "drom": "kamchatskaja_obl.",
+            "name": "\u041a\u0430\u043c\u0447\u0430\u0442\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "kamchatskaja_obl."
+        },
+        {
+            "autoru": "karelija",
+            "avito": "karelija",
+            "drom": "karelija",
+            "name": "\u041a\u0430\u0440\u0435\u043b\u0438\u044f",
+            "youla": "karelija"
+        },
+        {
+            "autoru": "kemerovskaja_obl.",
+            "avito": "kemerovskaja_obl.",
+            "drom": "kemerovskaja_obl.",
+            "name": "\u041a\u0435\u043c\u0435\u0440\u043e\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "kemerovskaja_obl."
+        },
+        {
+            "autoru": "kirovskaja_obl.",
+            "avito": "kirovskaja_obl.",
+            "drom": "kirovskaja_obl.",
+            "name": "\u041a\u0438\u0440\u043e\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "kirovskaja_obl."
+        },
+        {
+            "autoru": "komi",
+            "avito": "komi",
+            "drom": "komi",
+            "name": "\u041a\u043e\u043c\u0438",
+            "youla": "komi"
+        },
+        {
+            "autoru": "kostromskaja_obl.",
+            "avito": "kostromskaja_obl.",
+            "drom": "kostromskaja_obl.",
+            "name": "\u041a\u043e\u0441\u0442\u0440\u043e\u043c\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "kostromskaja_obl."
+        },
+        {
+            "autoru": "krasnodarskij_kraj",
+            "avito": "krasnodarskij_kraj",
+            "drom": "krasnodarskij_kraj",
+            "name": "\u041a\u0440\u0430\u0441\u043d\u043e\u0434\u0430\u0440\u0441\u043a\u0438\u0439 \u043a\u0440\u0430\u0439",
+            "youla": "krasnodarskij_kraj"
+        },
+        {
+            "autoru": "krasnojarskij_kraj",
+            "avito": "krasnojarskij_kraj",
+            "drom": "krasnojarskij_kraj",
+            "name": "\u041a\u0440\u0430\u0441\u043d\u043e\u044f\u0440\u0441\u043a\u0438\u0439 \u043a\u0440\u0430\u0439",
+            "youla": "krasnojarskij_kraj"
+        },
+        {
+            "autoru": "kurganskaja_obl.",
+            "avito": "kurganskaja_obl.",
+            "drom": "kurganskaja_obl.",
+            "name": "\u041a\u0443\u0440\u0433\u0430\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "kurganskaja_obl."
+        },
+        {
+            "autoru": "kurskaja_obl.",
+            "avito": "kurskaja_obl.",
+            "drom": "kurskaja_obl.",
+            "name": "\u041a\u0443\u0440\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "kurskaja_obl."
+        },
+        {
+            "autoru": "lipetskaja_obl.",
+            "avito": "lipetskaja_obl.",
+            "drom": "lipetskaja_obl.",
+            "name": "\u041b\u0438\u043f\u0435\u0446\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "lipetskaja_obl."
+        },
+        {
+            "autoru": "magadanskaja_obl.",
+            "avito": "magadanskaja_obl.",
+            "drom": "magadanskaja_obl.",
+            "name": "\u041c\u0430\u0433\u0430\u0434\u0430\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "magadanskaja_obl."
+        },
+        {
+            "autoru": "marij_el",
+            "avito": "marij_el",
+            "drom": "marij_el",
+            "name": "\u041c\u0430\u0440\u0438\u0439 \u042d\u043b",
+            "youla": "marij_el"
+        },
+        {
+            "autoru": "mordovija",
+            "avito": "mordovija",
+            "drom": "mordovija",
+            "name": "\u041c\u043e\u0440\u0434\u043e\u0432\u0438\u044f",
+            "youla": "mordovija"
+        },
+        {
+            "autoru": "moskovskaya_oblast",
+            "avito": "moskva_i_mo",
+            "drom": "region50",
+            "name": "\u041c\u043e\u0441\u043a\u0432\u0430 \u0438 \u041c\u043e\u0441\u043a\u043e\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "moskva"
+        },
+        {
+            "autoru": "murmanskaja_obl.",
+            "avito": "murmanskaja_obl.",
+            "drom": "murmanskaja_obl.",
+            "name": "\u041c\u0443\u0440\u043c\u0430\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "murmanskaja_obl."
+        },
+        {
+            "autoru": "nizhegorodskaja_(gor'kovskaja)",
+            "avito": "nizhegorodskaja_(gor'kovskaja)",
+            "drom": "nizhegorodskaja_(gor'kovskaja)",
+            "name": "\u041d\u0438\u0436\u0435\u0433\u043e\u0440\u043e\u0434\u0441\u043a\u0430\u044f (\u0413\u043e\u0440\u044c\u043a\u043e\u0432\u0441\u043a\u0430\u044f)",
+            "youla": "nizhegorodskaja_(gor'kovskaja)"
+        },
+        {
+            "autoru": "novgorodskaja_obl.",
+            "avito": "novgorodskaja_obl.",
+            "drom": "novgorodskaja_obl.",
+            "name": "\u041d\u043e\u0432\u0433\u043e\u0440\u043e\u0434\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "novgorodskaja_obl."
+        },
+        {
+            "autoru": "novosibirskaja_obl.",
+            "avito": "novosibirskaja_obl.",
+            "drom": "novosibirskaja_obl.",
+            "name": "\u041d\u043e\u0432\u043e\u0441\u0438\u0431\u0438\u0440\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "novosibirskaja_obl."
+        },
+        {
+            "autoru": "omskaja_obl.",
+            "avito": "omskaja_obl.",
+            "drom": "omskaja_obl.",
+            "name": "\u041e\u043c\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "omskaja_obl."
+        },
+        {
+            "autoru": "orenburgskaja_obl.",
+            "avito": "orenburgskaja_obl.",
+            "drom": "orenburgskaja_obl.",
+            "name": "\u041e\u0440\u0435\u043d\u0431\u0443\u0440\u0433\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "orenburgskaja_obl."
+        },
+        {
+            "autoru": "orlovskaja_obl.",
+            "avito": "orlovskaja_obl.",
+            "drom": "orlovskaja_obl.",
+            "name": "\u041e\u0440\u043b\u043e\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "orlovskaja_obl."
+        },
+        {
+            "autoru": "penzenskaja_obl.",
+            "avito": "penzenskaja_obl.",
+            "drom": "penzenskaja_obl.",
+            "name": "\u041f\u0435\u043d\u0437\u0435\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "penzenskaja_obl."
+        },
+        {
+            "autoru": "permskaja_obl.",
+            "avito": "permskaja_obl.",
+            "drom": "permskaja_obl.",
+            "name": "\u041f\u0435\u0440\u043c\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "permskaja_obl."
+        },
+        {
+            "autoru": "primorskij_kraj",
+            "avito": "primorskij_kraj",
+            "drom": "primorskij_kraj",
+            "name": "\u041f\u0440\u0438\u043c\u043e\u0440\u0441\u043a\u0438\u0439 \u043a\u0440\u0430\u0439",
+            "youla": "primorskij_kraj"
+        },
+        {
+            "autoru": "pskovskaja_obl.",
+            "avito": "pskovskaja_obl.",
+            "drom": "pskovskaja_obl.",
+            "name": "\u041f\u0441\u043a\u043e\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "pskovskaja_obl."
+        },
+        {
+            "autoru": "rostovskaja_obl.",
+            "avito": "rostovskaja_obl.",
+            "drom": "rostovskaja_obl.",
+            "name": "\u0420\u043e\u0441\u0442\u043e\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "rostovskaja_obl."
+        },
+        {
+            "autoru": "rjazanskaja_obl.",
+            "avito": "rjazanskaja_obl.",
+            "drom": "rjazanskaja_obl.",
+            "name": "\u0420\u044f\u0437\u0430\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "rjazanskaja_obl."
+        },
+        {
+            "autoru": "samarskaja_obl.",
+            "avito": "samarskaja_obl.",
+            "drom": "samarskaja_obl.",
+            "name": "\u0421\u0430\u043c\u0430\u0440\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "samarskaja_obl."
+        },
+        {
+            "autoru": "leningradskaya_oblast",
+            "avito": "sankt_peterburg_i_lo",
+            "drom": "region47",
+            "name": "\u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433 \u0438 \u043e\u0431\u043b\u0430\u0441\u0442\u044c",
+            "youla": "sankt-peterburg_i_oblast'"
+        },
+        {
+            "autoru": "saratovskaja_obl.",
+            "avito": "saratovskaja_obl.",
+            "drom": "saratovskaja_obl.",
+            "name": "\u0421\u0430\u0440\u0430\u0442\u043e\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "saratovskaja_obl."
+        },
+        {
+            "autoru": "saha_(jakutija)",
+            "avito": "saha_(jakutija)",
+            "drom": "saha_(jakutija)",
+            "name": "\u0421\u0430\u0445\u0430 (\u042f\u043a\u0443\u0442\u0438\u044f)",
+            "youla": "saha_(jakutija)"
+        },
+        {
+            "autoru": "sahalin",
+            "avito": "sahalin",
+            "drom": "sahalin",
+            "name": "\u0421\u0430\u0445\u0430\u043b\u0438\u043d",
+            "youla": "sahalin"
+        },
+        {
+            "autoru": "sverdlovskaja_obl.",
+            "avito": "sverdlovskaja_obl.",
+            "drom": "sverdlovskaja_obl.",
+            "name": "\u0421\u0432\u0435\u0440\u0434\u043b\u043e\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "sverdlovskaja_obl."
+        },
+        {
+            "autoru": "severnaja_osetija",
+            "avito": "severnaja_osetija",
+            "drom": "severnaja_osetija",
+            "name": "\u0421\u0435\u0432\u0435\u0440\u043d\u0430\u044f \u041e\u0441\u0435\u0442\u0438\u044f",
+            "youla": "severnaja_osetija"
+        },
+        {
+            "autoru": "smolenskaja_obl.",
+            "avito": "smolenskaja_obl.",
+            "drom": "smolenskaja_obl.",
+            "name": "\u0421\u043c\u043e\u043b\u0435\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "smolenskaja_obl."
+        },
+        {
+            "autoru": "stavropol'skij_kraj",
+            "avito": "stavropol'skij_kraj",
+            "drom": "stavropol'skij_kraj",
+            "name": "\u0421\u0442\u0430\u0432\u0440\u043e\u043f\u043e\u043b\u044c\u0441\u043a\u0438\u0439 \u043a\u0440\u0430\u0439",
+            "youla": "stavropol'skij_kraj"
+        },
+        {
+            "autoru": "tambovskaja_obl.",
+            "avito": "tambovskaja_obl.",
+            "drom": "tambovskaja_obl.",
+            "name": "\u0422\u0430\u043c\u0431\u043e\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "tambovskaja_obl."
+        },
+        {
+            "autoru": "tatarstan",
+            "avito": "tatarstan",
+            "drom": "tatarstan",
+            "name": "\u0422\u0430\u0442\u0430\u0440\u0441\u0442\u0430\u043d",
+            "youla": "tatarstan"
+        },
+        {
+            "autoru": "tverskaja_obl.",
+            "avito": "tverskaja_obl.",
+            "drom": "tverskaja_obl.",
+            "name": "\u0422\u0432\u0435\u0440\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "tverskaja_obl."
+        },
+        {
+            "autoru": "tomskaja_obl.",
+            "avito": "tomskaja_obl.",
+            "drom": "tomskaja_obl.",
+            "name": "\u0422\u043e\u043c\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "tomskaja_obl."
+        },
+        {
+            "autoru": "tuva_(tuvinskaja_resp.)",
+            "avito": "tuva_(tuvinskaja_resp.)",
+            "drom": "tuva_(tuvinskaja_resp.)",
+            "name": "\u0422\u0443\u0432\u0430 (\u0422\u0443\u0432\u0438\u043d\u0441\u043a\u0430\u044f \u0420\u0435\u0441\u043f.)",
+            "youla": "tuva_(tuvinskaja_resp.)"
+        },
+        {
+            "autoru": "tul'skaja_obl.",
+            "avito": "tul'skaja_obl.",
+            "drom": "tul'skaja_obl.",
+            "name": "\u0422\u0443\u043b\u044c\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "tul'skaja_obl."
+        },
+        {
+            "autoru": "tjumenskaja_obl.",
+            "avito": "tjumenskaja_obl.",
+            "drom": "tjumenskaja_obl.",
+            "name": "\u0422\u044e\u043c\u0435\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "tjumenskaja_obl."
+        },
+        {
+            "autoru": "udmurtija",
+            "avito": "udmurtija",
+            "drom": "udmurtija",
+            "name": "\u0423\u0434\u043c\u0443\u0440\u0442\u0438\u044f",
+            "youla": "udmurtija"
+        },
+        {
+            "autoru": "ul'janovskaja_obl.",
+            "avito": "ul'janovskaja_obl.",
+            "drom": "ul'janovskaja_obl.",
+            "name": "\u0423\u043b\u044c\u044f\u043d\u043e\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "ul'janovskaja_obl."
+        },
+        {
+            "autoru": "ural'skaja_obl.",
+            "avito": "ural'skaja_obl.",
+            "drom": "ural'skaja_obl.",
+            "name": "\u0423\u0440\u0430\u043b\u044c\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "ural'skaja_obl."
+        },
+        {
+            "autoru": "habarovskij_kraj",
+            "avito": "habarovskij_kraj",
+            "drom": "habarovskij_kraj",
+            "name": "\u0425\u0430\u0431\u0430\u0440\u043e\u0432\u0441\u043a\u0438\u0439 \u043a\u0440\u0430\u0439",
+            "youla": "habarovskij_kraj"
+        },
+        {
+            "autoru": "hakasija",
+            "avito": "hakasija",
+            "drom": "hakasija",
+            "name": "\u0425\u0430\u043a\u0430\u0441\u0438\u044f",
+            "youla": "hakasija"
+        },
+        {
+            "autoru": "hanty-mansijskij_ao",
+            "avito": "hanty-mansijskij_ao",
+            "drom": "hanty-mansijskij_ao",
+            "name": "\u0425\u0430\u043d\u0442\u044b-\u041c\u0430\u043d\u0441\u0438\u0439\u0441\u043a\u0438\u0439 \u0410\u041e",
+            "youla": "hanty-mansijskij_ao"
+        },
+        {
+            "autoru": "cheljabinskaja_obl.",
+            "avito": "cheljabinskaja_obl.",
+            "drom": "cheljabinskaja_obl.",
+            "name": "\u0427\u0435\u043b\u044f\u0431\u0438\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "cheljabinskaja_obl."
+        },
+        {
+            "autoru": "checheno-ingushetija",
+            "avito": "checheno-ingushetija",
+            "drom": "checheno-ingushetija",
+            "name": "\u0427\u0435\u0447\u0435\u043d\u043e-\u0418\u043d\u0433\u0443\u0448\u0435\u0442\u0438\u044f",
+            "youla": "checheno-ingushetija"
+        },
+        {
+            "autoru": "chitinskaja_obl.",
+            "avito": "chitinskaja_obl.",
+            "drom": "chitinskaja_obl.",
+            "name": "\u0427\u0438\u0442\u0438\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "chitinskaja_obl."
+        },
+        {
+            "autoru": "chuvashija",
+            "avito": "chuvashija",
+            "drom": "chuvashija",
+            "name": "\u0427\u0443\u0432\u0430\u0448\u0438\u044f",
+            "youla": "chuvashija"
+        },
+        {
+            "autoru": "chukotskij_ao",
+            "avito": "chukotskij_ao",
+            "drom": "chukotskij_ao",
+            "name": "\u0427\u0443\u043a\u043e\u0442\u0441\u043a\u0438\u0439 \u0410\u041e",
+            "youla": "chukotskij_ao"
+        },
+        {
+            "autoru": "jamalo-nenetskij_ao",
+            "avito": "jamalo-nenetskij_ao",
+            "drom": "jamalo-nenetskij_ao",
+            "name": "\u042f\u043c\u0430\u043b\u043e-\u041d\u0435\u043d\u0435\u0446\u043a\u0438\u0439 \u0410\u041e",
+            "youla": "jamalo-nenetskij_ao"
+        },
+        {
+            "autoru": "jaroslavskaja_obl.",
+            "avito": "jaroslavskaja_obl.",
+            "drom": "jaroslavskaja_obl.",
+            "name": "\u042f\u0440\u043e\u0441\u043b\u0430\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
+            "youla": "jaroslavskaja_obl."
+        }
+    ],
     "CityDB": [
         {
             "autoru": "abaza",
@@ -31728,554 +32276,6 @@
             "name": "\u042f\u044f",
             "region_id": "\u041a\u0435\u043c\u0435\u0440\u043e\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
             "youla": "jaja"
-        }
-    ],
-    "RegionDB": [
-        {
-            "autoru": "adygeya",
-            "avito": "adygeya",
-            "drom": "adygeja",
-            "name": "\u0410\u0434\u044b\u0433\u0435\u044f",
-            "youla": "adygeja"
-        },
-        {
-            "autoru": "altajskij_kraj",
-            "avito": "altajskij_kraj",
-            "drom": "altajskij_kraj",
-            "name": "\u0410\u043b\u0442\u0430\u0439\u0441\u043a\u0438\u0439 \u043a\u0440\u0430\u0439",
-            "youla": "altajskij_kraj"
-        },
-        {
-            "autoru": "amurskaja_obl.",
-            "avito": "amurskaja_obl.",
-            "drom": "amurskaja_obl.",
-            "name": "\u0410\u043c\u0443\u0440\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "amurskaja_obl."
-        },
-        {
-            "autoru": "arhangel'skaja_obl.",
-            "avito": "arhangel'skaja_obl.",
-            "drom": "arhangel'skaja_obl.",
-            "name": "\u0410\u0440\u0445\u0430\u043d\u0433\u0435\u043b\u044c\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "arhangel'skaja_obl."
-        },
-        {
-            "autoru": "astrahanskaja_obl.",
-            "avito": "astrahanskaja_obl.",
-            "drom": "astrahanskaja_obl.",
-            "name": "\u0410\u0441\u0442\u0440\u0430\u0445\u0430\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "astrahanskaja_obl."
-        },
-        {
-            "autoru": "bashkortostan(bashkirija)",
-            "avito": "bashkortostan(bashkirija)",
-            "drom": "bashkortostan(bashkirija)",
-            "name": "\u0411\u0430\u0448\u043a\u043e\u0440\u0442\u043e\u0441\u0442\u0430\u043d(\u0411\u0430\u0448\u043a\u0438\u0440\u0438\u044f)",
-            "youla": "bashkortostan(bashkirija)"
-        },
-        {
-            "autoru": "belgorodskaja_obl.",
-            "avito": "belgorodskaja_obl.",
-            "drom": "belgorodskaja_obl.",
-            "name": "\u0411\u0435\u043b\u0433\u043e\u0440\u043e\u0434\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "belgorodskaja_obl."
-        },
-        {
-            "autoru": "brjanskaja_obl.",
-            "avito": "brjanskaja_obl.",
-            "drom": "brjanskaja_obl.",
-            "name": "\u0411\u0440\u044f\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "brjanskaja_obl."
-        },
-        {
-            "autoru": "burjatija",
-            "avito": "burjatija",
-            "drom": "burjatija",
-            "name": "\u0411\u0443\u0440\u044f\u0442\u0438\u044f",
-            "youla": "burjatija"
-        },
-        {
-            "autoru": "vladimirskaja_obl.",
-            "avito": "vladimirskaja_obl.",
-            "drom": "vladimirskaja_obl.",
-            "name": "\u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "vladimirskaja_obl."
-        },
-        {
-            "autoru": "volgogradskaja_obl.",
-            "avito": "volgogradskaja_obl.",
-            "drom": "volgogradskaja_obl.",
-            "name": "\u0412\u043e\u043b\u0433\u043e\u0433\u0440\u0430\u0434\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "volgogradskaja_obl."
-        },
-        {
-            "autoru": "vologodskaja_obl.",
-            "avito": "vologodskaja_obl.",
-            "drom": "vologodskaja_obl.",
-            "name": "\u0412\u043e\u043b\u043e\u0433\u043e\u0434\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "vologodskaja_obl."
-        },
-        {
-            "autoru": "voronezhskaja_obl.",
-            "avito": "voronezhskaja_obl.",
-            "drom": "voronezhskaja_obl.",
-            "name": "\u0412\u043e\u0440\u043e\u043d\u0435\u0436\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "voronezhskaja_obl."
-        },
-        {
-            "autoru": "dagestan",
-            "avito": "dagestan",
-            "drom": "dagestan",
-            "name": "\u0414\u0430\u0433\u0435\u0441\u0442\u0430\u043d",
-            "youla": "dagestan"
-        },
-        {
-            "autoru": "evrejskaja_obl.",
-            "avito": "evrejskaja_obl.",
-            "drom": "evrejskaja_obl.",
-            "name": "\u0415\u0432\u0440\u0435\u0439\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "evrejskaja_obl."
-        },
-        {
-            "autoru": "ivanovskaja_obl.",
-            "avito": "ivanovskaja_obl.",
-            "drom": "ivanovskaja_obl.",
-            "name": "\u0418\u0432\u0430\u043d\u043e\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "ivanovskaja_obl."
-        },
-        {
-            "autoru": "irkutskaja_obl.",
-            "avito": "irkutskaja_obl.",
-            "drom": "irkutskaja_obl.",
-            "name": "\u0418\u0440\u043a\u0443\u0442\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "irkutskaja_obl."
-        },
-        {
-            "autoru": "kabardino-balkarija",
-            "avito": "kabardino-balkarija",
-            "drom": "kabardino-balkarija",
-            "name": "\u041a\u0430\u0431\u0430\u0440\u0434\u0438\u043d\u043e-\u0411\u0430\u043b\u043a\u0430\u0440\u0438\u044f",
-            "youla": "kabardino-balkarija"
-        },
-        {
-            "autoru": "kaliningradskaja_obl.",
-            "avito": "kaliningradskaja_obl.",
-            "drom": "kaliningradskaja_obl.",
-            "name": "\u041a\u0430\u043b\u0438\u043d\u0438\u043d\u0433\u0440\u0430\u0434\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "kaliningradskaja_obl."
-        },
-        {
-            "autoru": "kalmykija",
-            "avito": "kalmykija",
-            "drom": "kalmykija",
-            "name": "\u041a\u0430\u043b\u043c\u044b\u043a\u0438\u044f",
-            "youla": "kalmykija"
-        },
-        {
-            "autoru": "kaluzhskaja_obl.",
-            "avito": "kaluzhskaja_obl.",
-            "drom": "kaluzhskaja_obl.",
-            "name": "\u041a\u0430\u043b\u0443\u0436\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "kaluzhskaja_obl."
-        },
-        {
-            "autoru": "kamchatskaja_obl.",
-            "avito": "kamchatskaja_obl.",
-            "drom": "kamchatskaja_obl.",
-            "name": "\u041a\u0430\u043c\u0447\u0430\u0442\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "kamchatskaja_obl."
-        },
-        {
-            "autoru": "karelija",
-            "avito": "karelija",
-            "drom": "karelija",
-            "name": "\u041a\u0430\u0440\u0435\u043b\u0438\u044f",
-            "youla": "karelija"
-        },
-        {
-            "autoru": "kemerovskaja_obl.",
-            "avito": "kemerovskaja_obl.",
-            "drom": "kemerovskaja_obl.",
-            "name": "\u041a\u0435\u043c\u0435\u0440\u043e\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "kemerovskaja_obl."
-        },
-        {
-            "autoru": "kirovskaja_obl.",
-            "avito": "kirovskaja_obl.",
-            "drom": "kirovskaja_obl.",
-            "name": "\u041a\u0438\u0440\u043e\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "kirovskaja_obl."
-        },
-        {
-            "autoru": "komi",
-            "avito": "komi",
-            "drom": "komi",
-            "name": "\u041a\u043e\u043c\u0438",
-            "youla": "komi"
-        },
-        {
-            "autoru": "kostromskaja_obl.",
-            "avito": "kostromskaja_obl.",
-            "drom": "kostromskaja_obl.",
-            "name": "\u041a\u043e\u0441\u0442\u0440\u043e\u043c\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "kostromskaja_obl."
-        },
-        {
-            "autoru": "krasnodarskij_kraj",
-            "avito": "krasnodarskij_kraj",
-            "drom": "krasnodarskij_kraj",
-            "name": "\u041a\u0440\u0430\u0441\u043d\u043e\u0434\u0430\u0440\u0441\u043a\u0438\u0439 \u043a\u0440\u0430\u0439",
-            "youla": "krasnodarskij_kraj"
-        },
-        {
-            "autoru": "krasnojarskij_kraj",
-            "avito": "krasnojarskij_kraj",
-            "drom": "krasnojarskij_kraj",
-            "name": "\u041a\u0440\u0430\u0441\u043d\u043e\u044f\u0440\u0441\u043a\u0438\u0439 \u043a\u0440\u0430\u0439",
-            "youla": "krasnojarskij_kraj"
-        },
-        {
-            "autoru": "kurganskaja_obl.",
-            "avito": "kurganskaja_obl.",
-            "drom": "kurganskaja_obl.",
-            "name": "\u041a\u0443\u0440\u0433\u0430\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "kurganskaja_obl."
-        },
-        {
-            "autoru": "kurskaja_obl.",
-            "avito": "kurskaja_obl.",
-            "drom": "kurskaja_obl.",
-            "name": "\u041a\u0443\u0440\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "kurskaja_obl."
-        },
-        {
-            "autoru": "lipetskaja_obl.",
-            "avito": "lipetskaja_obl.",
-            "drom": "lipetskaja_obl.",
-            "name": "\u041b\u0438\u043f\u0435\u0446\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "lipetskaja_obl."
-        },
-        {
-            "autoru": "magadanskaja_obl.",
-            "avito": "magadanskaja_obl.",
-            "drom": "magadanskaja_obl.",
-            "name": "\u041c\u0430\u0433\u0430\u0434\u0430\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "magadanskaja_obl."
-        },
-        {
-            "autoru": "marij_el",
-            "avito": "marij_el",
-            "drom": "marij_el",
-            "name": "\u041c\u0430\u0440\u0438\u0439 \u042d\u043b",
-            "youla": "marij_el"
-        },
-        {
-            "autoru": "mordovija",
-            "avito": "mordovija",
-            "drom": "mordovija",
-            "name": "\u041c\u043e\u0440\u0434\u043e\u0432\u0438\u044f",
-            "youla": "mordovija"
-        },
-        {
-            "autoru": "moskovskaya_oblast",
-            "avito": "moskva_i_mo",
-            "drom": "region50",
-            "name": "\u041c\u043e\u0441\u043a\u0432\u0430 \u0438 \u041c\u043e\u0441\u043a\u043e\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "moskva"
-        },
-        {
-            "autoru": "murmanskaja_obl.",
-            "avito": "murmanskaja_obl.",
-            "drom": "murmanskaja_obl.",
-            "name": "\u041c\u0443\u0440\u043c\u0430\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "murmanskaja_obl."
-        },
-        {
-            "autoru": "nizhegorodskaja_(gor'kovskaja)",
-            "avito": "nizhegorodskaja_(gor'kovskaja)",
-            "drom": "nizhegorodskaja_(gor'kovskaja)",
-            "name": "\u041d\u0438\u0436\u0435\u0433\u043e\u0440\u043e\u0434\u0441\u043a\u0430\u044f (\u0413\u043e\u0440\u044c\u043a\u043e\u0432\u0441\u043a\u0430\u044f)",
-            "youla": "nizhegorodskaja_(gor'kovskaja)"
-        },
-        {
-            "autoru": "novgorodskaja_obl.",
-            "avito": "novgorodskaja_obl.",
-            "drom": "novgorodskaja_obl.",
-            "name": "\u041d\u043e\u0432\u0433\u043e\u0440\u043e\u0434\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "novgorodskaja_obl."
-        },
-        {
-            "autoru": "novosibirskaja_obl.",
-            "avito": "novosibirskaja_obl.",
-            "drom": "novosibirskaja_obl.",
-            "name": "\u041d\u043e\u0432\u043e\u0441\u0438\u0431\u0438\u0440\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "novosibirskaja_obl."
-        },
-        {
-            "autoru": "omskaja_obl.",
-            "avito": "omskaja_obl.",
-            "drom": "omskaja_obl.",
-            "name": "\u041e\u043c\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "omskaja_obl."
-        },
-        {
-            "autoru": "orenburgskaja_obl.",
-            "avito": "orenburgskaja_obl.",
-            "drom": "orenburgskaja_obl.",
-            "name": "\u041e\u0440\u0435\u043d\u0431\u0443\u0440\u0433\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "orenburgskaja_obl."
-        },
-        {
-            "autoru": "orlovskaja_obl.",
-            "avito": "orlovskaja_obl.",
-            "drom": "orlovskaja_obl.",
-            "name": "\u041e\u0440\u043b\u043e\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "orlovskaja_obl."
-        },
-        {
-            "autoru": "penzenskaja_obl.",
-            "avito": "penzenskaja_obl.",
-            "drom": "penzenskaja_obl.",
-            "name": "\u041f\u0435\u043d\u0437\u0435\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "penzenskaja_obl."
-        },
-        {
-            "autoru": "permskaja_obl.",
-            "avito": "permskaja_obl.",
-            "drom": "permskaja_obl.",
-            "name": "\u041f\u0435\u0440\u043c\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "permskaja_obl."
-        },
-        {
-            "autoru": "primorskij_kraj",
-            "avito": "primorskij_kraj",
-            "drom": "primorskij_kraj",
-            "name": "\u041f\u0440\u0438\u043c\u043e\u0440\u0441\u043a\u0438\u0439 \u043a\u0440\u0430\u0439",
-            "youla": "primorskij_kraj"
-        },
-        {
-            "autoru": "pskovskaja_obl.",
-            "avito": "pskovskaja_obl.",
-            "drom": "pskovskaja_obl.",
-            "name": "\u041f\u0441\u043a\u043e\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "pskovskaja_obl."
-        },
-        {
-            "autoru": "rostovskaja_obl.",
-            "avito": "rostovskaja_obl.",
-            "drom": "rostovskaja_obl.",
-            "name": "\u0420\u043e\u0441\u0442\u043e\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "rostovskaja_obl."
-        },
-        {
-            "autoru": "rjazanskaja_obl.",
-            "avito": "rjazanskaja_obl.",
-            "drom": "rjazanskaja_obl.",
-            "name": "\u0420\u044f\u0437\u0430\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "rjazanskaja_obl."
-        },
-        {
-            "autoru": "samarskaja_obl.",
-            "avito": "samarskaja_obl.",
-            "drom": "samarskaja_obl.",
-            "name": "\u0421\u0430\u043c\u0430\u0440\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "samarskaja_obl."
-        },
-        {
-            "autoru": "leningradskaya_oblast",
-            "avito": "sankt_peterburg_i_lo",
-            "drom": "region47",
-            "name": "\u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433 \u0438 \u043e\u0431\u043b\u0430\u0441\u0442\u044c",
-            "youla": "sankt-peterburg_i_oblast'"
-        },
-        {
-            "autoru": "saratovskaja_obl.",
-            "avito": "saratovskaja_obl.",
-            "drom": "saratovskaja_obl.",
-            "name": "\u0421\u0430\u0440\u0430\u0442\u043e\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "saratovskaja_obl."
-        },
-        {
-            "autoru": "saha_(jakutija)",
-            "avito": "saha_(jakutija)",
-            "drom": "saha_(jakutija)",
-            "name": "\u0421\u0430\u0445\u0430 (\u042f\u043a\u0443\u0442\u0438\u044f)",
-            "youla": "saha_(jakutija)"
-        },
-        {
-            "autoru": "sahalin",
-            "avito": "sahalin",
-            "drom": "sahalin",
-            "name": "\u0421\u0430\u0445\u0430\u043b\u0438\u043d",
-            "youla": "sahalin"
-        },
-        {
-            "autoru": "sverdlovskaja_obl.",
-            "avito": "sverdlovskaja_obl.",
-            "drom": "sverdlovskaja_obl.",
-            "name": "\u0421\u0432\u0435\u0440\u0434\u043b\u043e\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "sverdlovskaja_obl."
-        },
-        {
-            "autoru": "severnaja_osetija",
-            "avito": "severnaja_osetija",
-            "drom": "severnaja_osetija",
-            "name": "\u0421\u0435\u0432\u0435\u0440\u043d\u0430\u044f \u041e\u0441\u0435\u0442\u0438\u044f",
-            "youla": "severnaja_osetija"
-        },
-        {
-            "autoru": "smolenskaja_obl.",
-            "avito": "smolenskaja_obl.",
-            "drom": "smolenskaja_obl.",
-            "name": "\u0421\u043c\u043e\u043b\u0435\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "smolenskaja_obl."
-        },
-        {
-            "autoru": "stavropol'skij_kraj",
-            "avito": "stavropol'skij_kraj",
-            "drom": "stavropol'skij_kraj",
-            "name": "\u0421\u0442\u0430\u0432\u0440\u043e\u043f\u043e\u043b\u044c\u0441\u043a\u0438\u0439 \u043a\u0440\u0430\u0439",
-            "youla": "stavropol'skij_kraj"
-        },
-        {
-            "autoru": "tambovskaja_obl.",
-            "avito": "tambovskaja_obl.",
-            "drom": "tambovskaja_obl.",
-            "name": "\u0422\u0430\u043c\u0431\u043e\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "tambovskaja_obl."
-        },
-        {
-            "autoru": "tatarstan",
-            "avito": "tatarstan",
-            "drom": "tatarstan",
-            "name": "\u0422\u0430\u0442\u0430\u0440\u0441\u0442\u0430\u043d",
-            "youla": "tatarstan"
-        },
-        {
-            "autoru": "tverskaja_obl.",
-            "avito": "tverskaja_obl.",
-            "drom": "tverskaja_obl.",
-            "name": "\u0422\u0432\u0435\u0440\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "tverskaja_obl."
-        },
-        {
-            "autoru": "tomskaja_obl.",
-            "avito": "tomskaja_obl.",
-            "drom": "tomskaja_obl.",
-            "name": "\u0422\u043e\u043c\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "tomskaja_obl."
-        },
-        {
-            "autoru": "tuva_(tuvinskaja_resp.)",
-            "avito": "tuva_(tuvinskaja_resp.)",
-            "drom": "tuva_(tuvinskaja_resp.)",
-            "name": "\u0422\u0443\u0432\u0430 (\u0422\u0443\u0432\u0438\u043d\u0441\u043a\u0430\u044f \u0420\u0435\u0441\u043f.)",
-            "youla": "tuva_(tuvinskaja_resp.)"
-        },
-        {
-            "autoru": "tul'skaja_obl.",
-            "avito": "tul'skaja_obl.",
-            "drom": "tul'skaja_obl.",
-            "name": "\u0422\u0443\u043b\u044c\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "tul'skaja_obl."
-        },
-        {
-            "autoru": "tjumenskaja_obl.",
-            "avito": "tjumenskaja_obl.",
-            "drom": "tjumenskaja_obl.",
-            "name": "\u0422\u044e\u043c\u0435\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "tjumenskaja_obl."
-        },
-        {
-            "autoru": "udmurtija",
-            "avito": "udmurtija",
-            "drom": "udmurtija",
-            "name": "\u0423\u0434\u043c\u0443\u0440\u0442\u0438\u044f",
-            "youla": "udmurtija"
-        },
-        {
-            "autoru": "ul'janovskaja_obl.",
-            "avito": "ul'janovskaja_obl.",
-            "drom": "ul'janovskaja_obl.",
-            "name": "\u0423\u043b\u044c\u044f\u043d\u043e\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "ul'janovskaja_obl."
-        },
-        {
-            "autoru": "ural'skaja_obl.",
-            "avito": "ural'skaja_obl.",
-            "drom": "ural'skaja_obl.",
-            "name": "\u0423\u0440\u0430\u043b\u044c\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "ural'skaja_obl."
-        },
-        {
-            "autoru": "habarovskij_kraj",
-            "avito": "habarovskij_kraj",
-            "drom": "habarovskij_kraj",
-            "name": "\u0425\u0430\u0431\u0430\u0440\u043e\u0432\u0441\u043a\u0438\u0439 \u043a\u0440\u0430\u0439",
-            "youla": "habarovskij_kraj"
-        },
-        {
-            "autoru": "hakasija",
-            "avito": "hakasija",
-            "drom": "hakasija",
-            "name": "\u0425\u0430\u043a\u0430\u0441\u0438\u044f",
-            "youla": "hakasija"
-        },
-        {
-            "autoru": "hanty-mansijskij_ao",
-            "avito": "hanty-mansijskij_ao",
-            "drom": "hanty-mansijskij_ao",
-            "name": "\u0425\u0430\u043d\u0442\u044b-\u041c\u0430\u043d\u0441\u0438\u0439\u0441\u043a\u0438\u0439 \u0410\u041e",
-            "youla": "hanty-mansijskij_ao"
-        },
-        {
-            "autoru": "cheljabinskaja_obl.",
-            "avito": "cheljabinskaja_obl.",
-            "drom": "cheljabinskaja_obl.",
-            "name": "\u0427\u0435\u043b\u044f\u0431\u0438\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "cheljabinskaja_obl."
-        },
-        {
-            "autoru": "checheno-ingushetija",
-            "avito": "checheno-ingushetija",
-            "drom": "checheno-ingushetija",
-            "name": "\u0427\u0435\u0447\u0435\u043d\u043e-\u0418\u043d\u0433\u0443\u0448\u0435\u0442\u0438\u044f",
-            "youla": "checheno-ingushetija"
-        },
-        {
-            "autoru": "chitinskaja_obl.",
-            "avito": "chitinskaja_obl.",
-            "drom": "chitinskaja_obl.",
-            "name": "\u0427\u0438\u0442\u0438\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "chitinskaja_obl."
-        },
-        {
-            "autoru": "chuvashija",
-            "avito": "chuvashija",
-            "drom": "chuvashija",
-            "name": "\u0427\u0443\u0432\u0430\u0448\u0438\u044f",
-            "youla": "chuvashija"
-        },
-        {
-            "autoru": "chukotskij_ao",
-            "avito": "chukotskij_ao",
-            "drom": "chukotskij_ao",
-            "name": "\u0427\u0443\u043a\u043e\u0442\u0441\u043a\u0438\u0439 \u0410\u041e",
-            "youla": "chukotskij_ao"
-        },
-        {
-            "autoru": "jamalo-nenetskij_ao",
-            "avito": "jamalo-nenetskij_ao",
-            "drom": "jamalo-nenetskij_ao",
-            "name": "\u042f\u043c\u0430\u043b\u043e-\u041d\u0435\u043d\u0435\u0446\u043a\u0438\u0439 \u0410\u041e",
-            "youla": "jamalo-nenetskij_ao"
-        },
-        {
-            "autoru": "jaroslavskaja_obl.",
-            "avito": "jaroslavskaja_obl.",
-            "drom": "jaroslavskaja_obl.",
-            "name": "\u042f\u0440\u043e\u0441\u043b\u0430\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b.",
-            "youla": "jaroslavskaja_obl."
         }
     ]
 }

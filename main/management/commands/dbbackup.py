@@ -88,22 +88,6 @@ class Command(BaseCommand):
                 print(f'Restoring -- {obj}')
                 model.objects.create(**obj)
 
-        elif 'carmark-key-slugify' in options['load']:
-            mutable_data = asyncio.run(read_json())
-            for carmark in mutable_data['CarModel']:
-                print(carmark, carmark['parentMark_id'])
-                carmark['parentMark_id'] = slugify(carmark['parentMark_id'])
-
-            asyncio.run(write_json(mutable_data))
-
-        elif 'citydb-region-slugify' in options['load']:
-            mutable_data = asyncio.run(read_json())
-            for city in mutable_data['CityDB']:
-                city['region_id'] = slugify(city['region_id'])
-                print(city, city['region_id'])
-
-            asyncio.run(write_json(mutable_data))
-
         else:
             db = {
                 'CityDB': list(CityDB.objects.values()),

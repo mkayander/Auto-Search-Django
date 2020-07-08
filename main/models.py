@@ -59,7 +59,7 @@ class SearchTargetModel(models.Model):
 
 
 class RegionDB(SearchTargetModel):
-    name = models.CharField(max_length=60, primary_key=True)
+    name = models.CharField(max_length=60)
 
 
 class CityDB(SearchTargetModel):
@@ -68,7 +68,7 @@ class CityDB(SearchTargetModel):
 
 
 class CarMark(SearchTargetModel):
-    name = models.CharField(max_length=60, primary_key=True)
+    name = models.CharField(max_length=60)
 
     class Meta:
         ordering = ['name']
@@ -82,7 +82,7 @@ class CarModel(SearchTargetModel):
     mark = models.ForeignKey(CarMark, related_name='models', on_delete=models.CASCADE)
 
     class Meta:
-        ordering = ['name']
+        ordering = ['mark', 'name']
 
     def __str__(self):
         return f'{self.mark.name} {self.name}'
