@@ -3,7 +3,6 @@ import json
 from django.apps import apps
 from django.core.management.base import BaseCommand
 from django.core.serializers.json import DjangoJSONEncoder
-from django.db.models import Value, BooleanField
 
 from main.models import Region, City, CarMark, CarModel
 
@@ -21,8 +20,8 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         if "all" in options["action"]:
             db = {
-                "RegionDB": list(Region.objects.values()),
                 "CityDB": list(City.objects.values()),
+                "RegionDB": list(Region.objects.values()),
                 "CarMark": list(CarMark.objects.values()),
                 "CarModel": list(CarModel.objects.values()),
             }
@@ -45,7 +44,7 @@ class Command(BaseCommand):
 
                 self.stdout.write(self.style.SUCCESS("Successfully restored database from db.json"))
 
-        elif 'manual' in options["action"]:
+        elif "manual" in options["action"]:
             with open("db.json", 'r') as file:
                 saved_data = json.load(file)
                 for obj in saved_data["CityDB"]:
