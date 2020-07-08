@@ -6,7 +6,7 @@ from django.apps import apps
 from django.core.management.base import BaseCommand
 from pytils.translit import slugify
 
-from main.models import RegionDB, CityDB, CarMark, CarModel
+from main.models import Region, City, CarMark, CarModel
 
 
 async def write_json(data):
@@ -83,15 +83,15 @@ class Command(BaseCommand):
                 # try:
                 #     model.objects.get(name=obj['slug'])
                 # except model.DoesNotExist:
-                obj["region"] = RegionDB.objects.get(slug=obj["region_id"])
+                obj["region"] = Region.objects.get(slug=obj["region_id"])
                 del obj["region_id"]
                 print(f'Restoring -- {obj}')
                 model.objects.create(**obj)
 
         else:
             db = {
-                'CityDB': list(CityDB.objects.values()),
-                'RegionDB': list(RegionDB.objects.values()),
+                'CityDB': list(City.objects.values()),
+                'RegionDB': list(Region.objects.values()),
                 'CarMark': list(CarMark.objects.values()),
                 'CarModel': list(CarModel.objects.values())
             }

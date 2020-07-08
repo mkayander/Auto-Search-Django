@@ -5,7 +5,7 @@ from django.core.management.base import BaseCommand
 from django.core.serializers.json import DjangoJSONEncoder
 from django.db.models import Value, BooleanField
 
-from main.models import RegionDB, CityDB, CarMark, CarModel
+from main.models import Region, City, CarMark, CarModel
 
 
 def get_item_key(obj):
@@ -21,8 +21,8 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         if "all" in options["action"]:
             db = {
-                "RegionDB": list(RegionDB.objects.values()),
-                "CityDB": list(CityDB.objects.values()),
+                "RegionDB": list(Region.objects.values()),
+                "CityDB": list(City.objects.values()),
                 "CarMark": list(CarMark.objects.values()),
                 "CarModel": list(CarModel.objects.values()),
             }
@@ -37,12 +37,11 @@ class Command(BaseCommand):
                 for key, values in saved_data.items():
                     model = apps.get_model("main", key)
                     for obj in values:
-                        # try:
-                        #     print(get_item_key(obj))
-                        #     model.objects.get(pk=get_item_key(obj))
-                        # except model.DoesNotExist:
-                        print(f'Restoring -- {obj}')
-                        model.objects.create(**obj)
+                        try:
+                            model.objects.get(pk=get_item_key(obj))
+                        except model.DoesNotExist:
+                            print(f'Restoring -- {obj}')
+                            model.objects.create(**obj)
 
                 self.stdout.write(self.style.SUCCESS("Successfully restored database from db.json"))
 
@@ -54,7 +53,7 @@ class Command(BaseCommand):
                     # try:
                     #     model.objects.get(name=obj['slug'])
                     # except model.DoesNotExist:
-                    obj["region"] = RegionDB.objects.get(name=obj["region_id"])
+                    obj["region"] = Region.objects.get(name=obj["region_id"])
                     del obj["region_id"]
                     print(f'Restoring -- {obj}')
                     model.objects.create(**obj)

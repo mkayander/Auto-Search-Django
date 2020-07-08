@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseForbidden
 from django.shortcuts import render, redirect
 
-from .models import CarResult, CarFilter, CarMark, CarModel, CityDB, RegionDB
+from .models import CarResult, CarFilter, CarMark, CarModel, City, Region
 
 sys.path.insert(1, 'main/client/')
 
@@ -31,16 +31,16 @@ def pop_update(filter_data):
         pop_model.save()
 
     if not pop_cities == '':
-        cities = CityDB.objects.all().values('name')
-        regions = RegionDB.objects.all().values('name')
+        cities = City.objects.all().values('name')
+        regions = Region.objects.all().values('name')
         for a in cities:
             if pop_cities == a['name']:
-                pop_city = CityDB.objects.get(name=pop_cities)
+                pop_city = City.objects.get(name=pop_cities)
                 pop_city.popularCount += 1
                 pop_city.save()
         for a in regions:
             if pop_cities == a['name']:
-                pop_region = RegionDB.objects.get(name=pop_cities)
+                pop_region = Region.objects.get(name=pop_cities)
                 pop_region.popularCount += 1
                 pop_region.save()
 

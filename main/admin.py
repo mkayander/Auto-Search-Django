@@ -1,15 +1,15 @@
 from django.contrib import admin
 
-from .models import CarResult, CarFilter, OtherFilter, CityDB, CarMark, CarModel, RegionDB
+from .models import CarResult, CarFilter, OtherFilter, City, CarMark, CarModel, Region
 
 
-class CityDBAdmin(admin.ModelAdmin):
+class CityAdmin(admin.ModelAdmin):
     # list_display = ('name', 'region', 'slug', 'isPopular')
     search_fields = ['name', 'slug']
     ordering = ('name', )
 
 
-class RegionDBAdmin(admin.ModelAdmin):
+class RegionAdmin(admin.ModelAdmin):
     # list_display = ('name', 'slug', 'isPopular')
     search_fields = ['name', 'slug']
     ordering = ('name', )
@@ -44,8 +44,8 @@ class OtherFilterAdmin(admin.ModelAdmin):
 
 admin.site.register(CarResult, CarElementAdmin)
 admin.site.register(CarFilter, CarFilterAdmin)
-admin.site.register(RegionDB, RegionDBAdmin)
-admin.site.register(CityDB, CityDBAdmin)
+admin.site.register(Region, RegionAdmin)
+admin.site.register(City, CityAdmin)
 admin.site.register(CarMark, CarMarkAdmin)
 admin.site.register(CarModel, CarModelAdmin)
 admin.site.register(OtherFilter, OtherFilterAdmin)

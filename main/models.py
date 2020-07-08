@@ -58,13 +58,13 @@ class SearchTargetModel(models.Model):
 # ---------------------------------------------------------------------------------------
 
 
-class RegionDB(SearchTargetModel):
+class Region(SearchTargetModel):
     name = models.CharField(max_length=60)
 
 
-class CityDB(SearchTargetModel):
+class City(SearchTargetModel):
     name = models.CharField(max_length=60)
-    region = models.ForeignKey(RegionDB, related_name='cities', on_delete=models.CASCADE, null=True)
+    region = models.ForeignKey(Region, related_name='cities', on_delete=models.CASCADE, null=True)
 
 
 class CarMark(SearchTargetModel):
@@ -90,8 +90,8 @@ class CarModel(SearchTargetModel):
 
 class CarFilter(BaseFilterModel):
     owner = models.ForeignKey(Account, related_name='filters', on_delete=models.CASCADE)
-    regions = models.ManyToManyField('RegionDB', related_name="filters")
-    cities = models.ManyToManyField('CityDB', related_name="filters")
+    regions = models.ManyToManyField('main.Region', related_name="filters")
+    cities = models.ManyToManyField('main.City', related_name="filters")
     car_marks = models.ManyToManyField(CarMark, related_name="filters")
     car_models = models.ManyToManyField(CarModel, related_name="filters")
     hull = models.CharField(max_length=20, verbose_name="Кузов", blank=True)
