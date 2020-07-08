@@ -88,10 +88,19 @@ class CarModel(SearchTargetModel):
         return f'{self.mark.name} {self.name}'
 
 
+class CarResult(ResultModel):
+    """Модель результата поиска - автомобиль"""
+    year = models.PositiveIntegerField(blank=True, null=True)
+
+    def __str__(self):
+        return f'{self.e_id} {self.pk}'
+
+
 class CarFilter(BaseFilterModel):
-    owner = models.ForeignKey(Account, related_name='filters', on_delete=models.CASCADE)
-    regions = models.ManyToManyField('main.Region', related_name="filters")
-    cities = models.ManyToManyField('main.City', related_name="filters")
+    owner = models.ForeignKey(Account, related_name="filters", on_delete=models.CASCADE)
+    cars = models.ManyToManyField(CarResult, related_name="filters")
+    regions = models.ManyToManyField("main.Region", related_name="filters")
+    cities = models.ManyToManyField("main.City", related_name="filters")
     car_marks = models.ManyToManyField(CarMark, related_name="filters")
     car_models = models.ManyToManyField(CarModel, related_name="filters")
     hull = models.CharField(max_length=20, verbose_name="Кузов", blank=True)
@@ -110,14 +119,6 @@ class CarFilter(BaseFilterModel):
         for s in self.regions.values("name"): city_names += s['name'] + " "
         for s in self.cities.values("name"): region_names += s['name'] + " "
         return f'{self.owner.username} {marks_names}{models_names}{city_names}{region_names}'
-
-
-class CarResult(ResultModel):
-    """Модель результата поиска - автомобиль"""
-    year = models.PositiveIntegerField(blank=True, null=True)
-
-    def __str__(self):
-        return f'{self.e_id} {self.pk}'
 
 
 class OtherFilter(BaseFilterModel):

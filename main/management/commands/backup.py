@@ -4,7 +4,7 @@ from django.apps import apps
 from django.core.management.base import BaseCommand
 from django.core.serializers.json import DjangoJSONEncoder
 
-from main.models import Region, City, CarMark, CarModel
+from main.models import Region
 
 
 def get_item_key(obj):
@@ -19,12 +19,9 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         if "all" in options["action"]:
-            db = {
-                "CityDB": list(City.objects.values()),
-                "RegionDB": list(Region.objects.values()),
-                "CarMark": list(CarMark.objects.values()),
-                "CarModel": list(CarModel.objects.values()),
-            }
+            db = []
+            for model in apps.get_app_config("main").get_models():
+                db.append((model.__name__, list(model.objects.values())))
 
             with open("db.json", 'w+') as outfile:
                 json.dump(db, outfile, sort_keys=True, indent=4, cls=DjangoJSONEncoder)
@@ -32,10 +29,10 @@ class Command(BaseCommand):
 
         elif "restore" in options["action"]:
             with open("db.json", 'r') as file:
-                saved_data = json.load(file)
-                for key, values in saved_data.items():
-                    model = apps.get_model("main", key)
-                    for obj in values:
+                models_array = json.load(file)
+                for name, data in models_array:
+                    model = apps.get_model("main", name)
+                    for obj in data:
                         try:
                             model.objects.get(pk=get_item_key(obj))
                         except model.DoesNotExist:
@@ -46,8 +43,8 @@ class Command(BaseCommand):
 
         elif "manual" in options["action"]:
             with open("db.json", 'r') as file:
-                saved_data = json.load(file)
-                for obj in saved_data["CityDB"]:
+                models_array = json.load(file)
+                for obj in models_array["CityDB"]:
                     model = apps.get_model("main", "CityDB")
                     # try:
                     #     model.objects.get(name=obj['slug'])
@@ -59,10 +56,10 @@ class Command(BaseCommand):
 
         elif "reload-all" in options["action"]:
             with open("db.json", 'r') as file:
-                saved_data = json.load(file)
-                for key, values in saved_data.items():
-                    model = apps.get_model("main", key)
-                    for obj in values:
+                models_array = json.load(file)
+                for name, data in models_array.items():
+                    model = apps.get_model("main", name)
+                    for obj in data:
                         try:
                             instance = model.objects.get(pk=get_item_key(obj))
 
