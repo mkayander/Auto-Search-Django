@@ -21,77 +21,54 @@ class UserFilters(generics.ListAPIView):
 
     def get_queryset(self):
         user = self.request.user
-        # print(f'UserFilters: get_queryset {user=}')
         return CarFilter.objects.filter(owner=user)
 
 
-class CityUrls(generics.ListAPIView):
-    serializer_class = CitySerializer
-
-    def get_queryset(self):
-        city = self.kwargs['cityname']
-        return City.objects.filter(pk=city)
-
-
-class RegionDBView(viewsets.ModelViewSet):
+class RegionsView(viewsets.ModelViewSet):
     queryset = Region.objects.all()
     serializer_class = RegionSerializer
-    # permission_classes = (permissions.IsAuthenticated,)
     pagination_class = None
-    lookup_field = 'slug'
-    # filter_backends = [filters.SearchFilter]
-    filterset_fields = ['name', 'slug']
-    search_fields = ['name', '=slug']
+    filterset_fields = ['name']
+    search_fields = ['name']
 
 
-class CityDBView(viewsets.ModelViewSet):
+class CitiesView(viewsets.ModelViewSet):
     queryset = City.objects.all()
     serializer_class = CitySerializer
     permission_classes = (permissions.IsAuthenticated,)
-    lookup_field = 'slug'
-    # filter_backends = (d_filters.DjangoFilterBackend, filters.SearchFilter)
-    # filter_fields = ('title', 'age')
-    # filter_backends = [filters.SearchFilter, d_filters.DjangoFilterBackend]
-    filterset_fields = ['name', 'slug', 'region_slug']
-    search_fields = ['name', '=slug', '=region_slug']
-    # pagination_class = None
+    filterset_fields = ['name']
+    search_fields = ['name']
 
 
-class CarMarkView(viewsets.ModelViewSet):
+class CarMarksView(viewsets.ModelViewSet):
     queryset = CarMark.objects.all()
     serializer_class = CarMarkSerializer
     permission_classes = (permissions.IsAuthenticated,)
-    lookup_field = 'slug'
 
 
-class CarModelView(viewsets.ModelViewSet):
+class CarModelsView(viewsets.ModelViewSet):
     queryset = CarModel.objects.all()
     serializer_class = CarModelSerializer
     permission_classes = (permissions.IsAuthenticated,)
-    filterset_fields = ['name', 'slug', 'parentMark__slug']
-    search_fields = ['name', '=slug', '=parentMark__slug']
-    lookup_field = 'slug'
+    filterset_fields = ['name']
+    search_fields = ['name']
 
 
-class CarFilterView(viewsets.ModelViewSet):
+class CarFiltersView(viewsets.ModelViewSet):
     queryset = CarFilter.objects.all()
     serializer_class = CarFilterSerializer
     permission_classes = (permissions.IsAuthenticated,)
-    # lookup_field = 'slug'
-    filterset_fields = ['owner', 'slug']
-    search_fields = ['slug', ]
+    filterset_fields = ['owner']
 
     def get_queryset(self):
         return CarFilter.objects.filter(owner=self.request.user)
-        # return super().get_queryset()
 
 
-class CarElementView(viewsets.ModelViewSet):
+class CarResultsView(viewsets.ModelViewSet):
     queryset = CarResult.objects.all()
     serializer_class = CarElementSerializer
     permission_classes = (permissions.IsAuthenticated,)
-    lookup_field = 'slug'
-    filterset_fields = ['e_id', 'slug', 'year']
+    filterset_fields = ['e_id', 'year']
     search_fields = ['title']
 
 
@@ -103,32 +80,9 @@ class AccountView(viewsets.ModelViewSet):
 
     def get_queryset(self):
         return Account.objects.filter(pk=self.request.user.pk)
-    # lookup_field = 'slug'
-
-
-class Utils(views.APIView):
-    # authentication_classes = [SessionAuthentication, BasicAuthentication]
-    # permission_classes = [permissions.IsAuthenticated]
-    permission_classes = [permissions.AllowAny]
-
-    def get(self, request, *args, **kwargs):
-        print(args)
-        print(kwargs)
-        print(request.headers)
-        content = {
-            'user': str(request.user).encode('utf-8'),
-            'auth': request.auth,
-        }
-        return Response(content)
-
-    def post(self, request, *args, **kwargs):
-        print(request.POST)
-        print(request.headers)
-        return Response(data={"slish": "idi nah"})
 
 
 class GenAccountView(GenericAPIView):
-    # queryset = Account.objects.all()
     serializer_class = AccountSerializer
     pagination_class = None
     permission_classes = [permissions.IsAuthenticated]
@@ -267,7 +221,7 @@ def auth_and_check_user(request):
         return get_success_auth_response(request.user)
 
 
-# May move this somewhere else in the future
+# TODO: May move this somewhere else in the future
 def get_success_auth_response(user):
     token, created = Token.objects.get_or_create(user=user)
     return Response({
