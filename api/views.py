@@ -12,7 +12,7 @@ from rest_framework.views import APIView
 from account.models import Account
 from main.models import CarResult, CarFilter, CarMark, CarModel, City, Region
 from .serializers import CarFilterSerializer, CarElementSerializer, CarMarkSerializer, CarModelSerializer, \
-    RegionDBSerializer, CityDBSerializer, AccountSerializer, RegistrationSerializer, AccountPropertiesSerializer, \
+    RegionSerializer, CitySerializer, AccountSerializer, RegistrationSerializer, AccountPropertiesSerializer, \
     EmailAuthTokenSerializer
 
 
@@ -26,7 +26,7 @@ class UserFilters(generics.ListAPIView):
 
 
 class CityUrls(generics.ListAPIView):
-    serializer_class = CityDBSerializer
+    serializer_class = CitySerializer
 
     def get_queryset(self):
         city = self.kwargs['cityname']
@@ -35,7 +35,7 @@ class CityUrls(generics.ListAPIView):
 
 class RegionDBView(viewsets.ModelViewSet):
     queryset = Region.objects.all()
-    serializer_class = RegionDBSerializer
+    serializer_class = RegionSerializer
     # permission_classes = (permissions.IsAuthenticated,)
     pagination_class = None
     lookup_field = 'slug'
@@ -46,7 +46,7 @@ class RegionDBView(viewsets.ModelViewSet):
 
 class CityDBView(viewsets.ModelViewSet):
     queryset = City.objects.all()
-    serializer_class = CityDBSerializer
+    serializer_class = CitySerializer
     permission_classes = (permissions.IsAuthenticated,)
     lookup_field = 'slug'
     # filter_backends = (d_filters.DjangoFilterBackend, filters.SearchFilter)

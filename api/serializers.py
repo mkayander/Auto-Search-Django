@@ -36,24 +36,16 @@ class EmailAuthTokenSerializer(serializers.Serializer):
         return attrs
 
 
-class RegionDBSerializer(serializers.ModelSerializer):
+class RegionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Region
         fields = '__all__'
-        lookup_field = 'slug'
-        extra_kwargs = {
-            'url': {'lookup_field': 'slug'}
-        }
 
 
-class CityDBSerializer(serializers.ModelSerializer):
+class CitySerializer(serializers.ModelSerializer):
     class Meta:
         model = City
         fields = '__all__'
-        lookup_field = 'slug'
-        extra_kwargs = {
-            'url': {'lookup_field': 'slug'}
-        }
 
 
 class CarMarkSerializer(serializers.ModelSerializer):
@@ -63,15 +55,9 @@ class CarMarkSerializer(serializers.ModelSerializer):
 
 
 class CarModelSerializer(serializers.ModelSerializer):
-    parentMark = serializers.CharField(source="parentMark.slug")
-
     class Meta:
         model = CarModel
         fields = '__all__'
-        lookup_field = 'slug'
-        extra_kwargs = {
-            'url': {'lookup_field': 'slug'}
-        }
 
 
 class CarFilterSerializer(serializers.ModelSerializer):
@@ -80,11 +66,10 @@ class CarFilterSerializer(serializers.ModelSerializer):
     class Meta:
         model = CarFilter
         fields = '__all__'
-        read_only_fields = ('owner', 'id', 'slug', 'fid', 'quantity', 'count')
+        read_only_fields = ('owner', 'id', 'fid', 'quantity', 'count')
 
 
 class CarElementSerializer(serializers.ModelSerializer):
-    pf_slug = serializers.CharField(source="parentFilter.slug")
 
     class Meta:
         model = CarResult
