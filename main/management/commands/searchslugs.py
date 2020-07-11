@@ -5,7 +5,7 @@ from colorama import Fore
 
 
 class Command(BaseCommand):
-    help = '''Handy tool to manage all instances of models that inherit SearchTargetModel'''
+    help = """Handy tool to manage all instances of models that inherit SearchTargetModel"""
 
     def add_arguments(self, parser):
         parser.add_argument("action", nargs='+', type=str)

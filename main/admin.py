@@ -23,6 +23,7 @@ class CarMarkAdmin(admin.ModelAdmin):
 class CarModelAdmin(admin.ModelAdmin):
     # list_display = ('name', 'pk', 'slug', 'parentMark', 'isPopular')
     search_fields = ['name', 'pk']
+    list_filter = ["mark"]
 
 
 class CarElementAdmin(admin.ModelAdmin):
