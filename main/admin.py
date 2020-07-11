@@ -6,13 +6,13 @@ from .models import CarResult, CarFilter, OtherFilter, City, CarMark, CarModel, 
 class CityAdmin(admin.ModelAdmin):
     # list_display = ('name', 'region', 'slug', 'isPopular')
     search_fields = ['name', 'slug']
-    ordering = ('name', )
+    ordering = ('name',)
 
 
 class RegionAdmin(admin.ModelAdmin):
     # list_display = ('name', 'slug', 'isPopular')
     search_fields = ['name', 'slug']
-    ordering = ('name', )
+    ordering = ('name',)
 
 
 class CarMarkAdmin(admin.ModelAdmin):

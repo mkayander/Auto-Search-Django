@@ -1,4 +1,5 @@
 from django.contrib.auth import user_logged_in
+from django.http import HttpRequest
 from rest_framework import viewsets, views, generics, permissions, status
 from rest_framework.authtoken.models import Token
 from rest_framework.authtoken.views import ObtainAuthToken
@@ -16,13 +17,7 @@ from .serializers import CarFilterSerializer, CarElementSerializer, CarMarkSeria
     EmailAuthTokenSerializer
 
 
-class UserFilters(generics.ListAPIView):
-    serializer_class = CarFilterSerializer
-
-    def get_queryset(self):
-        user = self.request.user
-        return CarFilter.objects.filter(owner=user)
-
+# --- Generic DRF class-based model view sets -------------------------------
 
 class RegionsView(viewsets.ModelViewSet):
     queryset = Region.objects.all()
@@ -82,7 +77,20 @@ class AccountView(viewsets.ModelViewSet):
         return Account.objects.filter(pk=self.request.user.pk)
 
 
+# -------------------------------------------------------------
+
+
+class UserFilters(generics.ListAPIView):
+    """Shows search filters of the currently logged-in user."""
+    serializer_class = CarFilterSerializer
+
+    def get_queryset(self):
+        user = self.request.user
+        return CarFilter.objects.filter(owner=user)
+
+
 class GenAccountView(GenericAPIView):
+    """Shows serialized account data of the currently logged-in user."""
     serializer_class = AccountSerializer
     pagination_class = None
     permission_classes = [permissions.IsAuthenticated]
@@ -98,6 +106,10 @@ class GenAccountView(GenericAPIView):
 @api_view(['POST'])
 @permission_classes((permissions.AllowAny,))
 def registration_view(request):
+    """
+    Register a new user using RegistrationSerializer.
+    If request data is valid, save the user and return a success view with user data. Else, return serializer error.
+    """
     if request.method == 'POST':
         serializer = RegistrationSerializer(data=request.data)
         data = {}
@@ -116,7 +128,8 @@ def registration_view(request):
 
 @api_view(['GET'])
 @permission_classes([permissions.IsAuthenticated])
-def get_car_element_view(request, item_id):
+def get_car_result_by_id(request: HttpRequest, item_id: int):
+    """API view to get car result serialized data by id (database PK)."""
     if request.method == 'GET':
         print(f'get_car_element_view called -- {item_id=}')
         data = {}
@@ -132,9 +145,10 @@ def get_car_element_view(request, item_id):
             return Response(data)
 
 
-@api_view(['GET', 'PUT'])
+@api_view(['GET'])
 @permission_classes([permissions.IsAuthenticated])
 def account_properties_view(request):
+    """Get account properties of the authenticated user."""
     if request.method == 'GET':
         try:
             user = request.user
@@ -145,38 +159,8 @@ def account_properties_view(request):
         return Response(serializer.data)
 
 
-@api_view(['PUT'])
-@permission_classes([permissions.IsAuthenticated])
-def update_user_properties_view(request):
-    if request.method == 'PUT':
-        try:
-            user = request.user
-        except Account.DoesNotExist:
-            return Response(status=status.HTTP_404_NOT_FOUND)
-
-        serializer = AccountPropertiesSerializer(instance=user, data=request.data)
-        data = {}
-        if serializer.is_valid():
-            serializer.save()
-            data['response'] = "Account update success"
-            return Response(data=data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-
-class UserDetailView(APIView):
-    def get_object(self, pk):
-        return Account.objects.get(pk=pk)
-
-    def patch(self, request, pk):
-        user = self.get_object(pk)
-        serializer = AccountSerializer(user, data=request.data, partial=True)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(data=serializer.data)
-        return Response(status=status.HTTP_400_BAD_REQUEST, data=serializer.errors)
-
-
 class ObtainAuthTokenByEmail(ObtainAuthToken):
+    """Login to system by acquiring auth token from email + password"""
     serializer_class = EmailAuthTokenSerializer
     if coreapi is not None and coreschema is not None:
         schema = ManualSchema(
@@ -204,11 +188,11 @@ class ObtainAuthTokenByEmail(ObtainAuthToken):
         )
 
     def post(self, request, *args, **kwargs):
+        # Get serializer, if it validates request data, send "logged in" signal and return success view with user data
         serializer = self.serializer_class(data=request.data,
                                            context={'request': request})
         serializer.is_valid(raise_exception=True)
         user = serializer.validated_data['user']
-        # token, created = Token.objects.get_or_create(user=user)
         user_logged_in.send(sender=user.__class__, request=request, user=user)
         return get_success_auth_response(user)
 
@@ -216,6 +200,10 @@ class ObtainAuthTokenByEmail(ObtainAuthToken):
 @api_view(['GET'])
 @permission_classes([permissions.IsAuthenticated])
 def auth_and_check_user(request):
+    """
+    Send 'logged in' signal, return success view with user data.
+    This is used for client to check if their token is valid and proceed. I.e: auto-auth upon app launch.
+    """
     if request.method == 'GET':
         user_logged_in.send(sender=request.user.__class__, request=request, user=request.user)
         return get_success_auth_response(request.user)
@@ -223,6 +211,7 @@ def auth_and_check_user(request):
 
 # TODO: May move this somewhere else in the future
 def get_success_auth_response(user):
+    """Display some user info to indicate a successful authentication."""
     token, created = Token.objects.get_or_create(user=user)
     return Response({
         'userId': user.pk,

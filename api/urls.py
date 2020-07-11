@@ -18,7 +18,7 @@ urlpatterns = [
     path('', include(router.urls)),
     path('my-filters/', views.UserFilters.as_view()),
     path('auth/checkme/', views.auth_and_check_user, name="api_auth_user"),
-    path('car/<slug:item_id>/', views.get_car_element_view, name="api_get_car"),
+    path('car/<slug:item_id>/', views.get_car_result_by_id, name="api_get_car"),
     path('account/', views.GenAccountView.as_view(), name="generic_account_view"),
     path('register/', views.registration_view, name="api_register"),
     path('auth/obtain_key/', ObtainAuthTokenByEmail.as_view(), name="login"),
