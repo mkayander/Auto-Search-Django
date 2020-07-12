@@ -56,6 +56,7 @@ class CarFiltersView(viewsets.ModelViewSet):
     filterset_fields = ['owner']
 
     def get_queryset(self):
+        """Show only user's filters."""
         return CarFilter.objects.filter(owner=self.request.user)
 
 
@@ -74,6 +75,8 @@ class AccountView(viewsets.ModelViewSet):
     pagination_class = None
 
     def get_queryset(self):
+        """Show only user's account"""
+        # TODO ModelViewSet might not be needed if it always returns just one result
         return Account.objects.filter(pk=self.request.user.pk)
 
 

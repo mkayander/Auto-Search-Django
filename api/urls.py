@@ -12,7 +12,7 @@ router.register('regions', views.RegionsView)
 router.register('car_marks', views.CarMarksView)
 router.register('car_models', views.CarModelsView)
 
-router.register('account', views.AccountView)
+# router.register('account', views.AccountView)
 
 urlpatterns = [
     path('', include(router.urls)),
