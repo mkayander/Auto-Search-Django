@@ -22,17 +22,18 @@ from .serializers import CarFilterSerializer, CarElementSerializer, CarMarkSeria
 class RegionsView(viewsets.ModelViewSet):
     queryset = Region.objects.all()
     serializer_class = RegionSerializer
+    permission_classes = (permissions.IsAuthenticated,)
     pagination_class = None
-    filterset_fields = ['name']
-    search_fields = ['name']
+    filterset_fields = ["name"]
+    search_fields = ["name"]
 
 
 class CitiesView(viewsets.ModelViewSet):
     queryset = City.objects.all()
     serializer_class = CitySerializer
     permission_classes = (permissions.IsAuthenticated,)
-    filterset_fields = ['name']
-    search_fields = ['name']
+    filterset_fields = ["name", "region"]
+    search_fields = ["name"]
 
 
 class CarMarksView(viewsets.ModelViewSet):
@@ -45,8 +46,8 @@ class CarModelsView(viewsets.ModelViewSet):
     queryset = CarModel.objects.all()
     serializer_class = CarModelSerializer
     permission_classes = (permissions.IsAuthenticated,)
-    filterset_fields = ['name']
-    search_fields = ['name']
+    filterset_fields = ["name", "mark"]
+    search_fields = ["name"]
 
 
 class CarFiltersView(viewsets.ModelViewSet):
