@@ -48,7 +48,7 @@ celerybeat.pid
 
 .redis-server.swp
 
-db.json
+#db.json
 
 # Generated files
 .idea/**/contentModel.xml

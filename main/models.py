@@ -73,7 +73,7 @@ class SearchTargetModel(models.Model):
 
 
 class Region(SearchTargetModel):
-    """Geographic region that contain cities. Inherits search slugs."""
+    """Geographic region that contains cities. Inherits search slugs."""
     name = models.CharField(verbose_name="Наименование", max_length=60)
 
     class Meta:
@@ -84,7 +84,7 @@ class Region(SearchTargetModel):
 
 
 class City(SearchTargetModel):
-    """Geographic city that relate to it's region."""
+    """Geographic city that relate to it's region. Inherits search slugs."""
     name = models.CharField(verbose_name="Наименование", max_length=60)
     region = models.ForeignKey(Region, verbose_name="Регион", help_text="Регион, в которых входит город",
                                related_name='cities', on_delete=models.CASCADE, null=True)
