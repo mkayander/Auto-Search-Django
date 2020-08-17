@@ -131,11 +131,11 @@ class CarResult(ResultModel):
 class CarFilter(BaseFilterModel):
     """Search filter that extends base product filter and has properties/options to search a car."""
     owner = models.ForeignKey(Account, verbose_name="Автор фильтра", related_name="filters", on_delete=models.CASCADE)
-    cars = models.ManyToManyField(CarResult, verbose_name="Автомобили", related_name="filters")
-    regions = models.ManyToManyField("main.Region", verbose_name="Регионы поиска", related_name="filters")
-    cities = models.ManyToManyField("main.City", verbose_name="Города поиска", related_name="filters")
-    car_marks = models.ManyToManyField(CarMark, verbose_name="Марки авто", related_name="filters")
-    car_models = models.ManyToManyField(CarModel, verbose_name="Модели авто", related_name="filters")
+    cars = models.ManyToManyField(CarResult, verbose_name="Автомобили", related_name="filters", blank=True)
+    regions = models.ManyToManyField("main.Region", verbose_name="Регионы поиска", related_name="filters", blank=True)
+    cities = models.ManyToManyField("main.City", verbose_name="Города поиска", related_name="filters", blank=True)
+    car_marks = models.ManyToManyField(CarMark, verbose_name="Марки авто", related_name="filters", blank=True)
+    car_models = models.ManyToManyField(CarModel, verbose_name="Модели авто", related_name="filters", blank=True)
     hull = models.CharField(verbose_name="Кузов", max_length=20, blank=True)
     fuel = models.CharField(verbose_name="Тип двигателя", max_length=20, blank=True)
     transmission = models.CharField(verbose_name="Трансмиссия", max_length=20, blank=True)
